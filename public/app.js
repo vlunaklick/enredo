@@ -78,6 +78,9 @@ async function init() {
 
   const lvl = puzzle.difficulty ?? 2;
   $("meta-left").innerHTML = `#${puzzle.number} · ${shortDate(date)}${date === today ? "" : ' · <span class="archived">archivo</span>'}`;
+  const at = available.indexOf(date);
+  setStep($("prev"), available[at - 1]);
+  setStep($("next"), available[at + 1]);
   // Pistas de la comunidad promovidas a diaria (npm run destacadas): crédito a su autor, como texto.
   if (puzzle.author && puzzle.author !== "Enredo") $("meta-left").append(` · por ${puzzle.author}`);
   show(lvl);
@@ -108,7 +111,8 @@ async function initCommunity() {
   state = load(key, null) ?? newState(false);
   // author_name lo escribe cualquiera: siempre como texto, nunca como HTML.
   $("meta-left").textContent = `comunidad · por ${row.author_name}`;
-  $("next").hidden = true;
+  // Sin días alrededor ni cuenta atrás: no es la pista diaria.
+  for (const id of ["prev", "next", "upcoming"]) $(id).hidden = true;
   initReactions(puzzle, { notify: toast });
   show(row.difficulty);
 }
@@ -127,6 +131,11 @@ function notFound() {
   p.className = "account-links center";
   p.append(more, home);
   box.append(p);
+}
+
+const dayHref = (d) => (d === today ? "./" : `?d=${d}`);
+function setStep(el, d) {
+  if (d) { el.href = dayHref(d); el.title = longDate(d); } else el.setAttribute("aria-disabled", "true");
 }
 
 // ---------- clue with highlightable spans ----------
@@ -357,7 +366,7 @@ function renderArchive() {
   for (const [d, s] of allStates().reverse()) {
     const li = document.createElement("li");
     const a = document.createElement("a");
-    a.href = d === today ? "./" : `?d=${d}`;
+    a.href = dayHref(d);
     const st = !s ? "" : s.status === "won" ? "resuelta" : s.status === "lost" ? "fallada" : "a medias";
     a.innerHTML = `<span>${longDate(d)}${d === today ? " · hoy" : ""}</span><span class="st ${s?.status === "won" ? "won" : ""}">${st}</span>`;
     li.append(a);

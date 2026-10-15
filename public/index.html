@@ -31,7 +31,11 @@
 
   <main id="game" class="game" hidden>
     <div class="meta">
-      <span id="meta-left"></span>
+      <span class="day-nav">
+        <a id="prev" class="step" aria-label="Pista anterior"><svg viewBox="0 0 24 24"><path d="M15 6l-6 6 6 6"/></svg></a>
+        <span id="meta-left"></span>
+        <a id="next" class="step" aria-label="Pista siguiente"><svg viewBox="0 0 24 24"><path d="M9 6l6 6-6 6"/></svg></a>
+      </span>
       <span id="level" class="level"></span>
     </div>
 
@@ -70,7 +74,7 @@
       </div>
       <div class="result-actions">
         <button id="share" class="go small">Compartir</button>
-        <span id="next" class="next">Próxima en <b id="countdown">--:--:--</b></span>
+        <span id="upcoming" class="next">Próxima en <b id="countdown">--:--:--</b></span>
         <button id="report" class="link report" hidden>Denunciar</button>
       </div>
     </footer>

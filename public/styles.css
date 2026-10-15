@@ -55,6 +55,11 @@ svg { width: 20px; height: 20px; fill: none; stroke: currentColor; stroke-width:
 .level i { width: 14px; height: 5px; border-radius: 3px; background: var(--line); }
 .level i.on { background: var(--lime); }
 .archived { color: var(--coral); }
+.day-nav { display: inline-flex; align-items: center; gap: 4px; margin-left: -8px; }
+.step { width: 28px; height: 28px; border-radius: 8px; display: grid; place-items: center; color: var(--muted); }
+.step svg { width: 16px; height: 16px; }
+.step[href]:hover { color: var(--text); background: var(--raise); }
+.step[aria-disabled] { opacity: .25; }
 
 .clue {
   font: 700 clamp(28px, 8.4vw, 42px)/1.08 var(--display);

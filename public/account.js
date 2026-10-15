@@ -1,9 +1,17 @@
 // Cuentas opcionales (Supabase + Google). Sin cuenta todo sigue igual: el progreso vive en
 // localStorage. Con sesión, cada partida se copia también a la tabla `plays`.
-const SB_URL = "https://dcoftqtmtajcxsvwtukg.supabase.co";
+// La sesión (client, restoreSession, signIn…) sirve a cualquier página; initAccount pinta la
+// hoja «Tu cuenta» de index.html.
+
+// Escape para desarrollo: apunta la web a otro Supabase (p. ej. el local de `supabase start`) con
+//   localStorage.setItem("enredo:sb", JSON.stringify({ url: "http://127.0.0.1:54321", key: "<anon key>" }))
+// y bórralo con localStorage.removeItem("enredo:sb"). Solo se respeta en localhost/127.0.0.1; en producción se usan los de abajo.
+const DEV = !["localhost", "127.0.0.1"].includes(location.hostname) ? null : (() => { try { return JSON.parse(localStorage.getItem("enredo:sb")); } catch { return null; } })();
+export const SB_URL = DEV?.url || "https://dcoftqtmtajcxsvwtukg.supabase.co";
 // Clave pública por diseño: lo que protege los datos son las políticas RLS de la base.
-const SB_KEY = "sb_publishable_Qs8w0eebpbYypO6eb4JITw_M47SxF8p";
-const SESSION_KEY = "sb-dcoftqtmtajcxsvwtukg-auth-token";
+export const SB_KEY = DEV?.key || "sb_publishable_Qs8w0eebpbYypO6eb4JITw_M47SxF8p";
+// Donde supabase-js guarda la sesión: sb-<primer trozo del host>-auth-token.
+const SESSION_KEY = `sb-${new URL(SB_URL).hostname.split(".")[0]}-auth-token`;
 const PLAY_KEY = /^enredo:(\d{4}-\d{2}-\d{2})$/;
 const COLUMNS = "puzzle_date,status,guesses,hints,revealed,live,updated_at";
 // Las pistas cambiaron de fecha: todo progreso anterior a esto pertenece a otra pista y se descarta.
@@ -18,10 +26,11 @@ if (localStorage.getItem(RESET_KEY) !== RESET_AT) {
 }
 
 const $ = (id) => document.getElementById(id);
-let clientPromise, user = null, onSynced = () => {};
+let clientPromise, sessionPromise, user = null, onSynced = null;
+const listeners = new Set();
 
 // supabase-js pesa ~200 KB: solo se descarga si hay sesión o si alguien quiere entrar.
-function client() {
+export function client() {
   clientPromise ??= new Promise((resolve, reject) => {
     const s = document.createElement("script");
     s.src = "vendor/supabase-2.118.0.js";
@@ -31,6 +40,11 @@ function client() {
   });
   return clientPromise;
 }
+
+export const currentUser = () => user;
+/** Avisa cada vez que se entra o se sale (y una vez al restaurar la sesión). */
+export const onUserChange = (fn) => listeners.add(fn);
+export const displayName = (u = user) => u?.user_metadata?.full_name || u?.user_metadata?.name || u?.email || "";
 
 // ---------- local <-> remoto ----------
 const read = (k) => { try { return JSON.parse(localStorage.getItem(k)); } catch { return null; } };
@@ -68,7 +82,7 @@ async function syncAll() {
     const { error: e } = await sb.from("plays").upsert(upload);
     if (e) throw e;
   }
-  if (changed) onSynced();
+  if (changed) onSynced?.();
 }
 
 export async function pushPlay(date, state) {
@@ -82,24 +96,57 @@ export async function pushPlay(date, state) {
   }
 }
 
-// ---------- UI ----------
+// ---------- sesión ----------
+/** Recupera la sesión (o termina el login de Google al volver). Devuelve el usuario o null. */
+export function restoreSession() {
+  sessionPromise ??= (async () => {
+    const params = new URLSearchParams(location.search);
+    const returning = params.has("code") || params.has("error");
+    if (!returning && !localStorage.getItem(SESSION_KEY)) return null;
+
+    const sb = await client();
+    sb.auth.onAuthStateChange((_event, session) => {
+      const next = session?.user ?? null;
+      if (next?.id === user?.id) return;
+      user = next;
+      listeners.forEach((fn) => fn(user));
+      // Fuera del callback: supabase-js no admite llamadas a la base dentro de onAuthStateChange.
+      if (user && onSynced) setTimeout(() => syncAll().catch((err) => console.warn("sincronización fallida", err)));
+    });
+    await sb.auth.getSession();
+    if (returning) {
+      if (params.has("error")) console.warn("login con Google cancelado o fallido:", params.get("error_description"));
+      for (const k of ["code", "error", "error_code", "error_description"]) params.delete(k);
+      const qs = params.toString();
+      history.replaceState(null, "", location.pathname + (qs ? `?${qs}` : ""));
+    }
+    return user;
+  })();
+  return sessionPromise;
+}
+
+/** Redirige a Google; al volver, restoreSession() completa el login en la misma URL. */
+export async function signIn() {
+  const sb = await client();
+  const back = new URL(location.href);
+  back.hash = "";
+  const { error } = await sb.auth.signInWithOAuth({ provider: "google", options: { redirectTo: back.href } });
+  if (error) throw error;
+}
+
+// ---------- UI (hoja «Tu cuenta» de index.html) ----------
 function paint() {
-  const name = user?.user_metadata?.full_name || user?.user_metadata?.name || user?.email || "";
   $("account-out").hidden = !!user;
   $("account-in").hidden = !user;
-  $("account-name").textContent = name;
+  $("account-name").textContent = displayName();
   document.querySelector('[data-open="account"]').classList.toggle("signed", !!user);
 }
 
-async function signIn() {
+async function signInClick() {
   const btn = $("google");
   btn.disabled = true;
   try {
-    const sb = await client();
-    const back = new URL(location.href);
-    back.hash = "";
-    const { error } = await sb.auth.signInWithOAuth({ provider: "google", options: { redirectTo: back.href } });
-    if (error) throw error;
+    await signIn();
   } catch (err) {
     console.error(err);
     btn.disabled = false;
@@ -114,7 +161,7 @@ async function signOut() {
 }
 
 async function deleteAccount() {
-  if (!confirm("¿Borrar tu cuenta? Se elimina tu progreso guardado en la nube. El de este dispositivo se queda.")) return;
+  if (!confirm("¿Borrar tu cuenta? Se elimina tu progreso guardado en la nube y las pistas que hayas creado. El progreso de este dispositivo se queda.")) return;
   const sb = await client();
   const { error } = await sb.rpc("delete_account");
   if (error) {
@@ -127,29 +174,10 @@ async function deleteAccount() {
 
 export async function initAccount({ synced }) {
   onSynced = synced;
-  $("google").addEventListener("click", signIn);
+  $("google").addEventListener("click", signInClick);
   $("signout").addEventListener("click", signOut);
   $("delete-account").addEventListener("click", deleteAccount);
+  onUserChange(paint);
   paint();
-
-  const params = new URLSearchParams(location.search);
-  const returning = params.has("code") || params.has("error");
-  if (!returning && !localStorage.getItem(SESSION_KEY)) return;
-
-  const sb = await client();
-  sb.auth.onAuthStateChange((_event, session) => {
-    const next = session?.user ?? null;
-    if (next?.id === user?.id) return;
-    user = next;
-    paint();
-    // Fuera del callback: supabase-js no admite llamadas a la base dentro de onAuthStateChange.
-    if (user) setTimeout(() => syncAll().catch((err) => console.warn("sincronización fallida", err)));
-  });
-  await sb.auth.getSession();
-  if (returning) {
-    if (params.has("error")) console.warn("login con Google cancelado o fallido:", params.get("error_description"));
-    for (const k of ["code", "error", "error_code", "error_description"]) params.delete(k);
-    const qs = params.toString();
-    history.replaceState(null, "", location.pathname + (qs ? `?${qs}` : ""));
-  }
+  await restoreSession();
 }

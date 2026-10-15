@@ -13,8 +13,9 @@ Alguien escribe una tanda de pistas (a mano o con cualquier LLM)
 GitHub Actions, cada día: si quedan menos de 7 días de pistas, abre un issue de aviso.
 ```
 
-- Web 100 % estática (`public/`): sin servidor, sin base de datos, sin cuentas, sin dependencias.
-  Racha, estadísticas y progreso viven en el `localStorage` del jugador.
+- Web estática (`public/`), sin build ni dependencias de npm. Se puede jugar sin cuenta:
+  racha, estadísticas y progreso viven en el `localStorage` del jugador.
+- Cuentas opcionales con Google (Supabase) para sincronizar el progreso y crear pistas de la comunidad.
 - Si un día falta la pista, la web muestra la última disponible.
 
 ## Escribir pistas nuevas
@@ -27,6 +28,19 @@ GitHub Actions, cada día: si quedan menos de 7 días de pistas, abre un issue d
 
 En Claude Code, la skill `.claude/skills/nueva-pista/` hace todo el flujo, incluida la verificación a ciegas con un subagente.
 `AGENTS.md` es el punto de entrada para Codex, Cursor y otros agentes.
+
+## Comunidad
+
+Cualquiera con cuenta puede escribir pistas en `/crear` (`public/crear.html`). Se validan en el navegador con las
+mismas reglas que `npm run add` (`public/clue-rules.js`, compartido con `scripts/lib.mjs`) y se guardan en Supabase
+(tabla `community_puzzles`, migraciones en `supabase/migrations/`).
+
+- Se juegan en `/?c=<id>` con la misma interfaz; no cuentan para la racha ni el archivo y el progreso es solo local.
+- La hoja «Comunidad» lista recientes, mejores (por «Me gusta») y las tuyas, que puedes borrar.
+- Moderación: máximo 5 pistas por persona y día, filtro básico de palabras y ocultación automática a las 3 denuncias.
+- Las mejores pueden pasar a ser la pista del día: `npm run destacadas` vuelca las más votadas a `tandas/comunidad-AAAA-MM-DD.json`
+  (con su autor, que la web muestra como «por …»); revísalas y publícalas con `npm run add`.
+- Para probar contra un Supabase local: `localStorage.setItem("enredo:sb", JSON.stringify({ url, key }))` en la consola (ver `public/account.js`).
 
 ## Dificultad
 
@@ -43,7 +57,7 @@ Ojo al verificar con un LLM: un solucionador experto puntúa la dificultad 1-2 n
 
 ## Seguridad
 
-Ver [SECURITY.md](SECURITY.md). Resumen: sitio estático, sin backend, sin secretos ni datos personales, CSP estricta.
+Ver [SECURITY.md](SECURITY.md). Resumen: sitio estático con Supabase como único backend (protegido con RLS), sin secretos en el repo, CSP estricta.
 
 ## Local
 

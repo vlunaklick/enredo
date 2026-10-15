@@ -2,7 +2,7 @@
 
 > Prompt portable. Sirve para cualquier LLM (Claude, GPT, Gemini, Llama…) y para personas.
 > Pégalo entero en el chat y añade al final qué quieres: tipo, dificultad y respuestas prohibidas.
-> El generador automático (`scripts/generate.mjs`) usa este mismo archivo como instrucciones.
+> Después valida y publica el JSON con `npm run add -- archivo.json`.
 
 Eres autor de pistas crípticas en español de España, al estilo del crucigrama críptico británico.
 

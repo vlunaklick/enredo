@@ -69,8 +69,9 @@ svg { width: 20px; height: 20px; fill: none; stroke: currentColor; stroke-width:
 }
 .clue .enum { color: var(--muted); font-weight: 500; }
 .clue mark { color: inherit; background: none; transition: color .3s, box-shadow .3s; }
-.clue mark.def.on { color: var(--bg); background: var(--def); box-shadow: 0 0 0 3px var(--def); border-radius: 2px; }
-.clue mark.ind.on { color: var(--ind); text-decoration: underline wavy; text-underline-offset: 6px; text-decoration-thickness: 2px; }
+.clue mark.on { padding: 0 .08em; border-radius: 4px; -webkit-box-decoration-break: clone; box-decoration-break: clone; }
+.clue mark.def.on { color: var(--bg); background: var(--def); }
+.clue mark.ind.on { color: var(--ind); background: color-mix(in srgb, var(--ind) 22%, transparent); }
 
 /* Answer: one real input under mono underline slots. */
 .answer { position: relative; display: block; cursor: text; }
@@ -102,15 +103,16 @@ svg { width: 20px; height: 20px; fill: none; stroke: currentColor; stroke-width:
 .chips { display: grid; grid-template-columns: repeat(4, 1fr); gap: 6px; }
 .chip {
   display: flex; flex-direction: column; align-items: flex-start; gap: 2px;
-  padding: 9px 10px; border: 1px dashed var(--line); border-radius: 12px; background: none;
+  padding: 9px 10px; border: 1px solid var(--muted); border-radius: 12px; background: none;
   transition: border-color .15s, opacity .2s;
 }
 .chip b { font-weight: 500; font-size: 13px; }
 .chip small { font: 500 11px var(--mono); color: var(--coral); }
-.chip:hover:not(:disabled) { border-color: var(--muted); border-style: solid; }
+.chip:hover:not(:disabled) { border-color: var(--text); }
 .chip:disabled { opacity: .35; cursor: default; }
-.chip.used { border-style: solid; border-color: var(--lime); opacity: 1; }
-.chip.used small { color: var(--lime); }
+.chip.used { border-color: var(--line); }
+.chip.used small { color: var(--muted); }
+.chip.used b::after { content: " ✓"; color: var(--lime); }
 .hint-text { min-height: 20px; margin: 10px 0; font-size: 14px; color: var(--text); }
 .hint-text.idle { color: var(--muted); }
 

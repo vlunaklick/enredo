@@ -67,10 +67,10 @@ const input = $("input");
 
 async function init() {
   manifest = await fetchJSON("puzzles/manifest.json");
-  const available = manifest.dates.filter((d) => d <= today);
+  const available = manifest.dates;
   const asked = new URLSearchParams(location.search).get("d");
-  // Never serve the future; if today is missing (generator hiccup), fall back to the latest one.
-  const date = asked && available.includes(asked) ? asked : available.includes(today) ? today : available.at(-1);
+  // Every published clue is playable from the archive; the default is today's, or the latest past one if today is missing.
+  const date = asked && available.includes(asked) ? asked : available.includes(today) ? today : available.filter((d) => d <= today).at(-1) ?? available[0];
   if (!date) { $("loading").textContent = "todavía no hay pistas"; return; }
 
   puzzle = await fetchJSON(`puzzles/${date}.json`);
@@ -285,7 +285,7 @@ setInterval(() => { if (state && state.status !== "playing") tickCountdown(); },
 
 // ---------- stats & archive ----------
 function allStates() {
-  return manifest.dates.filter((d) => d <= today).map((d) => [d, load(`enredo:${d}`, null)]);
+  return manifest.dates.map((d) => [d, load(`enredo:${d}`, null)]);
 }
 function renderStats() {
   const live = allStates().filter(([, s]) => s?.live && s.status !== "playing");

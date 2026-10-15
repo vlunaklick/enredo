@@ -5,7 +5,17 @@ const SB_URL = "https://dcoftqtmtajcxsvwtukg.supabase.co";
 const SB_KEY = "sb_publishable_Qs8w0eebpbYypO6eb4JITw_M47SxF8p";
 const SESSION_KEY = "sb-dcoftqtmtajcxsvwtukg-auth-token";
 const PLAY_KEY = /^enredo:(\d{4}-\d{2}-\d{2})$/;
-const COLUMNS = "puzzle_date,status,guesses,hints,revealed,live";
+const COLUMNS = "puzzle_date,status,guesses,hints,revealed,live,updated_at";
+// Las pistas cambiaron de fecha: todo progreso anterior a esto pertenece a otra pista y se descarta.
+const RESET_AT = "2026-10-15T19:30:00Z";
+const RESET_KEY = "enredo:reset";
+
+if (localStorage.getItem(RESET_KEY) !== RESET_AT) {
+  const stale = [];
+  for (let i = 0; i < localStorage.length; i++) if (PLAY_KEY.test(localStorage.key(i))) stale.push(localStorage.key(i));
+  stale.forEach((k) => localStorage.removeItem(k));
+  localStorage.setItem(RESET_KEY, RESET_AT);
+}
 
 const $ = (id) => document.getElementById(id);
 let clientPromise, user = null, onSynced = () => {};
@@ -39,7 +49,7 @@ async function syncAll() {
   const sb = await client();
   const { data, error } = await sb.from("plays").select(COLUMNS);
   if (error) throw error;
-  const remote = new Map(data.map((r) => [r.puzzle_date, fromRow(r)]));
+  const remote = new Map(data.filter((r) => new Date(r.updated_at) >= new Date(RESET_AT)).map((r) => [r.puzzle_date, fromRow(r)]));
   const dates = new Set(remote.keys());
   for (let i = 0; i < localStorage.length; i++) {
     const m = localStorage.key(i).match(PLAY_KEY);

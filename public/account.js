@@ -103,10 +103,23 @@ async function signOut() {
   // El progreso local se queda en este dispositivo.
 }
 
+async function deleteAccount() {
+  if (!confirm("¿Borrar tu cuenta? Se elimina tu progreso guardado en la nube. El de este dispositivo se queda.")) return;
+  const sb = await client();
+  const { error } = await sb.rpc("delete_account");
+  if (error) {
+    console.error(error);
+    $("account-error").textContent = "No se pudo borrar la cuenta. Prueba otra vez.";
+    return;
+  }
+  await sb.auth.signOut({ scope: "local" });
+}
+
 export async function initAccount({ synced }) {
   onSynced = synced;
   $("google").addEventListener("click", signIn);
   $("signout").addEventListener("click", signOut);
+  $("delete-account").addEventListener("click", deleteAccount);
   paint();
 
   const params = new URLSearchParams(location.search);

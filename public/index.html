@@ -101,12 +101,17 @@
     <div id="account-out">
       <p class="account-text">Entra para guardar tu racha y tus números en todos tus dispositivos. Sin cuenta puedes seguir jugando igual.</p>
       <button id="google" class="go">Entrar con Google</button>
-      <p id="account-error" class="account-error" role="alert"></p>
+      <p class="account-links"><a href="privacidad">Privacidad</a></p>
     </div>
     <div id="account-in" hidden>
       <p class="account-text">Has entrado como <b id="account-name"></b>. Tu progreso se guarda en la nube.</p>
-      <button id="signout" class="link">Cerrar sesión</button>
+      <div class="account-links">
+        <button id="signout" class="link">Cerrar sesión</button>
+        <button id="delete-account" class="link danger">Borrar mi cuenta</button>
+        <a href="privacidad">Privacidad</a>
+      </div>
     </div>
+    <p id="account-error" class="account-error" role="alert"></p>
   </dialog>
 
   <div id="toast" class="toast" role="status"></div>

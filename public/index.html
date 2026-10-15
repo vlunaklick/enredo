@@ -1,0 +1,99 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover, interactive-widget=resizes-content" />
+  <title>enredo · una pista críptica al día</title>
+  <meta name="description" content="Cada día, una pista críptica en español. Encuentra la definición, descifra el truco." />
+  <meta name="theme-color" content="#111311" />
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='8' fill='%23111311'/><circle cx='23' cy='22' r='4' fill='%23e4ff57'/><text x='12' y='22' font-family='monospace' font-weight='700' font-size='18' text-anchor='middle' fill='%23ecebe4'>e</text></svg>" />
+  <link rel="stylesheet" href="fonts.css" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="top">
+    <span class="wordmark">enredo<i></i></span>
+    <nav>
+      <button class="icon" data-open="learn" aria-label="Aprender">
+        <svg viewBox="0 0 24 24"><path d="M4 19V5.5A2.5 2.5 0 0 1 6.5 3H20v14H6.5A2.5 2.5 0 0 0 4 19.5 2.5 2.5 0 0 0 6.5 22H20"/></svg>
+      </button>
+      <button class="icon" data-open="archive" aria-label="Archivo">
+        <svg viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="17" rx="3"/><path d="M3 9h18M8 2v4M16 2v4"/></svg>
+      </button>
+      <button class="icon" data-open="stats" aria-label="Estadísticas">
+        <svg viewBox="0 0 24 24"><path d="M5 20v-6M12 20V4M19 20v-9"/></svg>
+      </button>
+    </nav>
+  </header>
+
+  <main id="game" class="game" hidden>
+    <div class="meta">
+      <span id="meta-left"></span>
+      <span id="level" class="level"></span>
+    </div>
+
+    <p id="clue" class="clue"></p>
+
+    <label class="answer" id="answer">
+      <input id="input" autocomplete="off" autocorrect="off" autocapitalize="characters" spellcheck="false" enterkeyhint="go" aria-label="Tu respuesta" />
+      <span id="slots" class="slots"></span>
+    </label>
+
+    <p id="status" class="status" role="status"></p>
+    <button id="intro" class="intro" hidden>¿Primera vez? <u>Aprende en un minuto</u> →</button>
+
+    <footer id="play" class="play">
+      <div class="chips" role="group" aria-label="Ayudas">
+        <button class="chip" data-hint="definition"><b>Definición</b><small>−10</small></button>
+        <button class="chip" data-hint="indicator"><b>Indicador</b><small>−10</small></button>
+        <button class="chip" data-hint="type"><b>Truco</b><small>−10</small></button>
+        <button class="chip" data-hint="letter"><b>Letra</b><small>−10</small></button>
+      </div>
+      <p id="hint-text" class="hint-text"></p>
+      <button id="go" class="go">Probar <span id="tries"></span></button>
+    </footer>
+
+    <footer id="result" class="result" hidden>
+      <div class="verdict">
+        <strong id="result-title"></strong>
+        <span id="score"></span>
+      </div>
+      <p id="explanation" class="explanation"></p>
+      <div class="result-actions">
+        <button id="share" class="go small">Compartir</button>
+        <span class="next">Próxima en <b id="countdown">--:--:--</b></span>
+      </div>
+    </footer>
+  </main>
+
+  <p id="loading" class="loading">cargando…</p>
+
+  <dialog id="learn" class="sheet learn">
+    <form method="dialog"><button class="close" aria-label="Cerrar">×</button></form>
+    <div class="learn-body"></div>
+  </dialog>
+
+  <dialog id="stats" class="sheet">
+    <form method="dialog"><button class="close" aria-label="Cerrar">×</button></form>
+    <h2>Tus números</h2>
+    <div class="stat-row">
+      <div><strong id="s-played">0</strong><span>jugadas</span></div>
+      <div><strong id="s-win">0</strong><span>% aciertos</span></div>
+      <div><strong id="s-streak">0</strong><span>racha</span></div>
+      <div><strong id="s-max">0</strong><span>mejor racha</span></div>
+    </div>
+    <h3>Intentos para acertar</h3>
+    <div id="s-dist" class="dist"></div>
+  </dialog>
+
+  <dialog id="archive" class="sheet">
+    <form method="dialog"><button class="close" aria-label="Cerrar">×</button></form>
+    <h2>Archivo</h2>
+    <ul id="archive-list" class="archive-list"></ul>
+  </dialog>
+
+  <div id="toast" class="toast" role="status"></div>
+
+  <script src="app.js" type="module"></script>
+</body>
+</html>

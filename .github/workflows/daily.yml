@@ -1,0 +1,67 @@
+name: Pistas diarias
+
+on:
+  schedule:
+    # 21:30 UTC = 22:30/23:30 en Madrid. Rellena el colchón de días futuros antes de medianoche.
+    - cron: "30 21 * * *"
+  workflow_dispatch:
+  pull_request:
+  push:
+    branches: [main]
+
+# Mínimo privilegio por defecto; solo el job que genera puede escribir.
+permissions:
+  contents: read
+
+concurrency:
+  group: pistas-${{ github.ref }}
+  cancel-in-progress: false
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+      - uses: actions/setup-node@949feb2413d6458794dcd2491c4babbbce0c15c1 # v7.1.0
+        with:
+          node-version: 22
+      - run: npm ci --ignore-scripts
+      - run: npm run check
+
+  generate:
+    # Solo en el repo original y nunca en PRs: los forks no reciben el secret ni permisos de escritura.
+    if: github.repository == 'vlunaklick/enredo' && (github.event_name == 'schedule' || github.event_name == 'workflow_dispatch')
+    needs: check
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    permissions:
+      contents: write
+    environment: generator
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+      - uses: actions/setup-node@949feb2413d6458794dcd2491c4babbbce0c15c1 # v7.1.0
+        with:
+          node-version: 22
+      - run: npm ci --ignore-scripts
+
+      - name: Generar pistas que falten
+        env:
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+        run: |
+          if [ -z "$ANTHROPIC_API_KEY" ]; then
+            echo "::warning::Falta el secret ANTHROPIC_API_KEY; no se generan pistas nuevas."
+            exit 0
+          fi
+          npm run generate
+
+      - name: Validar y guardar
+        # Vercel despliega solo al recibir este commit en main.
+        run: |
+          npm run check
+          git config user.name "enredo-bot"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add public/puzzles
+          git diff --cached --quiet || (git commit -m "chore: add generated puzzles" && git push)

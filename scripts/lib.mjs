@@ -8,7 +8,7 @@ export const PUZZLE_DIR = path.join(here, "..", "public", "puzzles");
 export const MANIFEST = path.join(PUZZLE_DIR, "manifest.json");
 export const TIMEZONE = "Europe/Madrid";
 // Day #1 of the game. Puzzle numbers are days since this date + 1.
-export const EPOCH = "2026-10-15";
+export const EPOCH = "2026-09-19";
 
 export const TYPES = {
   anagrama: "Anagrama: las letras del material se reordenan.",

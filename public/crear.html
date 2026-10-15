@@ -1,0 +1,128 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <title>Crea una pista · enredo</title>
+  <meta name="description" content="Escribe tu propia pista críptica en español y compártela." />
+  <meta name="theme-color" content="#111311" />
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='8' fill='%23111311'/><circle cx='23' cy='22' r='4' fill='%23e4ff57'/><text x='12' y='22' font-family='monospace' font-weight='700' font-size='18' text-anchor='middle' fill='%23ecebe4'>e</text></svg>" />
+  <link rel="stylesheet" href="fonts.css" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body class="doc">
+  <header class="top">
+    <a class="wordmark" href="./">enredo<i></i></a>
+    <a class="back" href="./#comunidad">Comunidad</a>
+  </header>
+  <main class="doc-body create">
+    <h1>Crea una pista</h1>
+    <p class="lead">Escribe una pista críptica y compártela con un enlace. Aparecerá en la sección Comunidad.</p>
+
+    <section id="gate" hidden>
+      <p>Para publicar pistas necesitas entrar con tu cuenta de Google. Así puedes borrarlas cuando quieras y evitamos el spam.</p>
+      <button id="google" class="go">Entrar con Google</button>
+      <p id="gate-error" class="account-error" role="alert"></p>
+    </section>
+
+    <p id="booting" class="muted">cargando…</p>
+
+    <form id="form" class="clue-form" hidden novalidate>
+      <div class="field">
+        <label for="f-clue">Pista</label>
+        <textarea id="f-clue" rows="2" maxlength="180" autocomplete="off" placeholder="Ciudad eterna con amor alocado"></textarea>
+        <small>Sin la enumeración: el número de letras se añade solo.</small>
+      </div>
+
+      <div class="field">
+        <label for="f-answer">Respuesta <b id="enum" class="enum-hint"></b></label>
+        <input id="f-answer" maxlength="40" autocomplete="off" autocapitalize="characters" spellcheck="false" placeholder="ROMA" />
+        <small>De 3 a 12 letras. Si son varias palabras, sepáralas con espacios.</small>
+      </div>
+
+      <div class="field">
+        <label for="f-type">Tipo de truco</label>
+        <select id="f-type"></select>
+        <small id="type-help"></small>
+      </div>
+
+      <div class="field">
+        <label for="f-definition">Definición</label>
+        <input id="f-definition" maxlength="100" autocomplete="off" placeholder="Ciudad eterna" />
+        <small>Cópiala tal cual de la pista. Debe ir al principio o al final.</small>
+      </div>
+
+      <div class="field" id="indicator-field">
+        <label for="f-indicator">Indicador <span id="indicator-req" class="req"></span></label>
+        <input id="f-indicator" maxlength="100" autocomplete="off" placeholder="alocado" />
+        <small>La palabra que dice qué hacer («alocado», «al revés», «oculta en»…). Cópiala de la pista.</small>
+      </div>
+
+      <div class="field" id="fodder-field">
+        <label for="f-fodder">Material <span id="fodder-req" class="req"></span></label>
+        <input id="f-fodder" maxlength="100" autocomplete="off" placeholder="amor" />
+        <small>Las letras que se reordenan, se invierten o se recortan. Cópialas de la pista.</small>
+      </div>
+
+      <div class="field">
+        <label for="f-explanation">Explicación</label>
+        <textarea id="f-explanation" rows="3" maxlength="500" placeholder="«Ciudad eterna» es la definición. «alocado» indica anagrama de AMOR → ROMA."></textarea>
+        <small>Se enseña al terminar, aciertes o no. Es lo que convierte un fallo en un «¡ah, claro!»: primero la definición, luego el truco paso a paso.</small>
+      </div>
+
+      <fieldset class="field">
+        <legend>Dificultad</legend>
+        <div class="segmented">
+          <label><input type="radio" name="difficulty" value="1" /> <span>fácil</span></label>
+          <label><input type="radio" name="difficulty" value="2" checked /> <span>media</span></label>
+          <label><input type="radio" name="difficulty" value="3" /> <span>difícil</span></label>
+        </div>
+      </fieldset>
+
+      <div class="field">
+        <label for="f-name">Tu nombre público</label>
+        <input id="f-name" maxlength="40" autocomplete="nickname" />
+        <small>Se verá junto a la pista. Puedes usar un apodo.</small>
+      </div>
+
+      <h3>Así se verá</h3>
+      <div class="preview" aria-live="polite">
+        <div class="meta"><span id="p-meta">comunidad</span><span id="p-level" class="level"></span></div>
+        <p id="p-clue" class="clue"></p>
+      </div>
+
+      <ul id="problems" class="problems" aria-live="polite"></ul>
+
+      <button id="submit" class="go" type="submit" disabled>Publicar pista</button>
+      <p id="form-error" class="account-error" role="alert"></p>
+    </form>
+
+    <section id="done" hidden>
+      <h2>¡Publicada!</h2>
+      <p>Comparte este enlace para que la resuelvan:</p>
+      <p class="share-link"><a id="done-link" href="./"></a></p>
+      <div class="done-actions">
+        <button id="copy" class="go small">Copiar enlace</button>
+        <button id="share-native" class="go small ghost" hidden>Compartir</button>
+        <button id="again" class="link">Crear otra</button>
+      </div>
+    </section>
+
+    <section class="tips">
+      <h2>Cómo escribir una buena pista</h2>
+      <ul>
+        <li><b>Definición en un extremo.</b> Al principio o al final de la pista, y que signifique de verdad la respuesta.</li>
+        <li><b>Superficie natural.</b> Leída en voz alta, la pista debe sonar a una frase normal que despiste.</li>
+        <li><b>Una sola respuesta.</b> Si un buen jugador puede dudar entre dos palabras, reescríbela.</li>
+        <li><b>Todo cuenta.</b> Cada palabra sirve para algo; solo valen enlaces mínimos («de», «con», «:»).</li>
+        <li><b>Pruébala antes.</b> Pide a alguien que la resuelva sin saber la respuesta. Si no sale, ajústala.</li>
+      </ul>
+      <p class="muted">Pistas ofensivas o spam se ocultan al recibir varias denuncias. <a href="privacidad">Privacidad</a></p>
+    </section>
+  </main>
+
+  <div id="toast" class="toast" role="status"></div>
+
+  <script src="crear.js" type="module"></script>
+</body>
+</html>

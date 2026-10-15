@@ -15,6 +15,7 @@ Juego web de una pista críptica en español al día. Web estática en `public/`
 | `npm run dev` | Sirve la web en http://localhost:5173 |
 | `npm run add -- f.json [--date AAAA-MM-DD] [--dry]` | Valida y publica pistas |
 | `npm run check` | Revisa todas las pistas publicadas |
+| `npm run destacadas` | Vuelca las pistas de la comunidad más votadas a una tanda |
 
 No edites `manifest.json` a mano: se regenera a partir de los archivos.
 

@@ -1,4 +1,6 @@
 import { initAccount, pushPlay } from "./account.js";
+import { clueSpans, decode, enumeration, letters, validateClue } from "./clue-rules.js";
+import { fetchPuzzle, initFeed, initReactions, openFeed, stateKey } from "./community.js";
 
 const TZ = "Europe/Madrid";
 const MAX_ATTEMPTS = 5;
@@ -23,15 +25,6 @@ const today = madridDate();
 // ---------- utils ----------
 function madridDate(d = new Date()) {
   return new Intl.DateTimeFormat("en-CA", { timeZone: TZ }).format(d);
-}
-function letters(s) {
-  return s.toUpperCase().replace(/Ñ/g, "\0").normalize("NFD")
-    .replace(/[̀-ͯ]/g, "").replace(/\0/g, "Ñ").replace(/[^A-ZÑ]/g, "");
-}
-function decode(str, date) {
-  const k = [...`enredo-${date}`].map((c) => c.charCodeAt(0));
-  const bytes = Uint8Array.from(atob(str), (c) => c.charCodeAt(0)).map((b, i) => b ^ k[i % k.length]);
-  return JSON.parse(new TextDecoder().decode(bytes));
 }
 function shortDate(iso) {
   return new Date(`${iso}T12:00:00Z`).toLocaleDateString("es-ES", { weekday: "short", day: "numeric", month: "short", timeZone: "UTC" });
@@ -62,11 +55,15 @@ async function fetchJSON(url) {
 }
 
 // ---------- state ----------
-let manifest, puzzle, secret, answer, state;
+let manifest, puzzle, secret, answer, state, key;
 const input = $("input");
+// ?c=<id>: pista de la comunidad. Va aparte de las diarias: sin racha, sin archivo, sin nube.
+const communityId = new URLSearchParams(location.search).get("c");
+const newState = (live) => ({ guesses: [], hints: [], revealed: [], status: "playing", live });
 
 async function init() {
   manifest = await fetchJSON("puzzles/manifest.json");
+  if (communityId) return initCommunity();
   const available = manifest.dates.filter((d) => d <= today);
   const asked = new URLSearchParams(location.search).get("d");
   // Never serve the future; if today is missing (generator hiccup), fall back to the latest one.
@@ -76,10 +73,17 @@ async function init() {
   puzzle = await fetchJSON(`puzzles/${date}.json`);
   secret = decode(puzzle.secret, date);
   answer = letters(secret.answer);
-  state = load(`enredo:${date}`, null) ?? { guesses: [], hints: [], revealed: [], status: "playing", live: date === today };
+  key = `enredo:${date}`;
+  state = load(key, null) ?? newState(date === today);
 
   const lvl = puzzle.difficulty ?? 2;
   $("meta-left").innerHTML = `#${puzzle.number} · ${shortDate(date)}${date === today ? "" : ' · <span class="archived">archivo</span>'}`;
+  // Pistas de la comunidad promovidas a diaria (npm run destacadas): crédito a su autor, como texto.
+  if (puzzle.author && puzzle.author !== "Enredo") $("meta-left").append(` · por ${puzzle.author}`);
+  show(lvl);
+}
+
+function show(lvl) {
   $("level").innerHTML = `${LEVELS[lvl]} ${[1, 2, 3].map((n) => `<i class="${n <= lvl ? "on" : ""}"></i>`).join("")}`;
   renderClue();
   render();
@@ -88,20 +92,49 @@ async function init() {
   if (!isTouch && state.status === "playing") input.focus();
 }
 
+async function initCommunity() {
+  const row = await fetchPuzzle(communityId);
+  if (!row) return notFound();
+  puzzle = row;
+  // Las filas se pueden insertar por la API sin pasar por /crear: se revalida todo.
+  try {
+    secret = decode(row.secret, "comunidad");
+    const bad = validateClue({ ...secret, clue: row.clue, type: row.type, difficulty: row.difficulty }).length
+      || enumeration(secret.answer) !== row.enumeration;
+    if (bad) return notFound();
+  } catch { return notFound(); }
+  answer = letters(secret.answer);
+  key = stateKey(row.id);
+  state = load(key, null) ?? newState(false);
+  // author_name lo escribe cualquiera: siempre como texto, nunca como HTML.
+  $("meta-left").textContent = `comunidad · por ${row.author_name}`;
+  $("next").hidden = true;
+  initReactions(puzzle, { notify: toast });
+  show(row.difficulty);
+}
+
+function notFound() {
+  const box = $("loading");
+  box.textContent = "Esta pista no existe o se ha retirado. ";
+  const more = document.createElement("button");
+  more.className = "link";
+  more.textContent = "Ver pistas de la comunidad";
+  more.addEventListener("click", () => { openFeed(); $("community").showModal(); });
+  const home = document.createElement("a");
+  home.href = "./";
+  home.textContent = "Ir a la pista de hoy";
+  const p = document.createElement("p");
+  p.className = "account-links center";
+  p.append(more, home);
+  box.append(p);
+}
+
 // ---------- clue with highlightable spans ----------
 function renderClue() {
   const el = $("clue");
   const m = puzzle.clue.match(/^(.*?)\s*(\([\d,]+\))$/);
   const text = m ? m[1] : puzzle.clue;
-  const spans = [];
-  const defAt = text.indexOf(secret.definition);
-  if (defAt >= 0) spans.push({ start: defAt, end: defAt + secret.definition.length, cls: "def" });
-  if (secret.indicator) {
-    let at = text.indexOf(secret.indicator);
-    while (at >= 0 && spans.some((s) => at < s.end && at + secret.indicator.length > s.start)) at = text.indexOf(secret.indicator, at + 1);
-    if (at >= 0) spans.push({ start: at, end: at + secret.indicator.length, cls: "ind" });
-  }
-  spans.sort((a, b) => a.start - b.start);
+  const spans = clueSpans(text, secret.definition, secret.indicator);
   el.textContent = "";
   let pos = 0;
   for (const s of spans) {
@@ -249,22 +282,22 @@ function render() {
       : "Esta se resistió";
     $("score").textContent = state.status === "won" ? `${score()} pts` : "0 pts";
     $("explanation").textContent = secret.explanation;
-    tickCountdown();
+    if (!communityId) tickCountdown();
   }
 }
 
 function persist() {
-  save(`enredo:${puzzle.date}`, state);
-  pushPlay(puzzle.date, state);
+  save(key, state);
+  if (!communityId) pushPlay(puzzle.date, state);
 }
 
 // ---------- share ----------
 $("share").addEventListener("click", async () => {
   const marks = state.guesses.map((g) => (g === answer ? "🟢" : "⚫")).join("");
   const text = [
-    `enredo #${puzzle.number} · ${LEVELS[puzzle.difficulty ?? 2]}`,
+    communityId ? `enredo comunidad · ${LEVELS[puzzle.difficulty]}` : `enredo #${puzzle.number} · ${LEVELS[puzzle.difficulty ?? 2]}`,
     `${marks} ${state.status === "won" ? `${state.guesses.length}/${MAX_ATTEMPTS}` : `X/${MAX_ATTEMPTS}`}${state.hints.length ? ` · ${state.hints.length} ayuda${state.hints.length === 1 ? "" : "s"}` : ""}`,
-    location.origin + location.pathname,
+    location.origin + location.pathname + (communityId ? `?c=${encodeURIComponent(puzzle.id)}` : ""),
   ].join("\n");
   try {
     if (navigator.share && isTouch) await navigator.share({ text });
@@ -281,7 +314,7 @@ function tickCountdown() {
   $("countdown").textContent = `${pad(Math.floor(secs / 3600))}:${pad(Math.floor(secs / 60) % 60)}:${pad(secs % 60)}`;
   if (madridDate() !== today) location.reload();
 }
-setInterval(() => { if (state && state.status !== "playing") tickCountdown(); }, 1000);
+setInterval(() => { if (!communityId && state && state.status !== "playing") tickCountdown(); }, 1000);
 
 // ---------- stats & archive ----------
 function allStates() {
@@ -307,7 +340,7 @@ function renderStats() {
   // Built with DOM APIs (not innerHTML + style="") so the CSP can forbid inline styles.
   $("s-dist").replaceChildren(...dist.map((n, i) => {
     const row = document.createElement("div");
-    row.className = "bar" + (state?.status === "won" && state.guesses.length === i + 1 ? " now" : "");
+    row.className = "bar" + (!communityId && state?.status === "won" && state.guesses.length === i + 1 ? " now" : "");
     const label = document.createElement("span");
     label.textContent = i + 1;
     const fill = document.createElement("div");
@@ -337,11 +370,13 @@ document.querySelectorAll("[data-open]").forEach((b) => b.addEventListener("clic
   const id = b.dataset.open;
   if (id === "stats") renderStats();
   if (id === "archive") renderArchive();
+  if (id === "community") openFeed();
   $(id).showModal();
 }));
 document.querySelectorAll("dialog").forEach((d) => d.addEventListener("click", (e) => { if (e.target === d) d.close(); }));
 
-init().catch((err) => {
+initFeed();
+init().then(() => { if (location.hash === "#comunidad") { openFeed(); $("community").showModal(); } }).catch((err) => {
   console.error(err);
   $("loading").textContent = "no se pudo cargar la pista";
 });
@@ -349,8 +384,8 @@ init().catch((err) => {
 // Al entrar desde otro dispositivo puede llegar progreso más avanzado de la pista abierta.
 initAccount({
   synced() {
-    if (!puzzle) return;
-    state = load(`enredo:${puzzle.date}`, null) ?? state;
+    if (!puzzle || communityId) return;
+    state = load(key, null) ?? state;
     render();
   },
 }).catch((err) => console.warn("cuentas no disponibles", err));

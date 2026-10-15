@@ -23,6 +23,9 @@
       <button class="icon" data-open="stats" aria-label="Estadísticas">
         <svg viewBox="0 0 24 24"><path d="M5 20v-6M12 20V4M19 20v-9"/></svg>
       </button>
+      <button class="icon" data-open="account" aria-label="Cuenta">
+        <svg viewBox="0 0 24 24"><circle cx="12" cy="8" r="4"/><path d="M4 21a8 8 0 0 1 16 0"/></svg>
+      </button>
     </nav>
   </header>
 
@@ -90,6 +93,20 @@
     <form method="dialog"><button class="close" aria-label="Cerrar">×</button></form>
     <h2>Archivo</h2>
     <ul id="archive-list" class="archive-list"></ul>
+  </dialog>
+
+  <dialog id="account" class="sheet">
+    <form method="dialog"><button class="close" aria-label="Cerrar">×</button></form>
+    <h2>Tu cuenta</h2>
+    <div id="account-out">
+      <p class="account-text">Entra para guardar tu racha y tus números en todos tus dispositivos. Sin cuenta puedes seguir jugando igual.</p>
+      <button id="google" class="go">Entrar con Google</button>
+      <p id="account-error" class="account-error" role="alert"></p>
+    </div>
+    <div id="account-in" hidden>
+      <p class="account-text">Has entrado como <b id="account-name"></b>. Tu progreso se guarda en la nube.</p>
+      <button id="signout" class="link">Cerrar sesión</button>
+    </div>
   </dialog>
 
   <div id="toast" class="toast" role="status"></div>

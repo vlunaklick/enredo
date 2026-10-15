@@ -1,4 +1,5 @@
 import { openLearn } from "./learn.js";
+import { initAccount, pushPlay } from "./account.js";
 
 const TZ = "Europe/Madrid";
 const MAX_ATTEMPTS = 5;
@@ -265,6 +266,7 @@ function render() {
 
 function persist() {
   save(`enredo:${puzzle.date}`, state);
+  pushPlay(puzzle.date, state);
 }
 
 // ---------- share ----------
@@ -360,3 +362,12 @@ init().catch((err) => {
   console.error(err);
   $("loading").textContent = "no se pudo cargar la pista";
 });
+
+// Al entrar desde otro dispositivo puede llegar progreso más avanzado de la pista abierta.
+initAccount({
+  synced() {
+    if (!puzzle) return;
+    state = load(`enredo:${puzzle.date}`, null) ?? state;
+    render();
+  },
+}).catch((err) => console.warn("cuentas no disponibles", err));

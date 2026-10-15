@@ -1,10 +1,10 @@
 {
   "date": "2026-09-27",
   "number": 9,
-  "clue": "Fruta que esconde el humor amargo (4)",
-  "enumeration": "4",
-  "type": "oculta",
-  "difficulty": 2,
+  "clue": "Votación descabezada que imparte el maestro (7)",
+  "enumeration": "7",
+  "type": "combinada",
+  "difficulty": 3,
   "author": "Enredo",
-  "secret": "HkwTCxcYSEASCBRgf2tsEBtHChcDDQFERlldWA8KG2tAQhEPUElGBkNWWVFXWV9LDwgVAB0RCgoLSBAcEFBCVF1IQBVfAAcJCEMPV0hCWkxeWFlbWAtMSEemxGtARUZX74sZSEEXCQ9SAQEJRFxZUV/ug1cDEnIWDR0LAAZJUxBXWA3ykkVHeio8UiQJDl9VX/CNDdK/vxJ6KjwzS0QqQRLymV5YXVZfElYIDwACC62WElRXRV1ZSllTDUUAHUUBHA1eURJURFxQXhwVGA=="
+  "secret": "HkwTCxcYSEASCBRhdXpue/T2IFBJRgtIVFlcX1lZVkMQDUcHHxUFHVlXEFdaDV1YSEFDFwFQSUYGQ1ZZUVdZX0sPCBUBCwEGBQ1ISFFWVw8cG0tdUwELAEdeAVheXB4USEhJQVNZBBobCgpNFxDymV9AQFhfRlJFCx5FCQ5IQURAWe+LGUhBFwkPUgEBCURcWVFf7oNXAxJ7BE4EChAOTlvzgVgNVUoNR1kETjcpISxue/OheBYQSkRcFwkPUgYFDUhIURIeQVEZaBsXFBsXAQVPYXdzcX/uo3cDEEo="
 }

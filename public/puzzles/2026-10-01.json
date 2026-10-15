@@ -1,10 +1,10 @@
 {
   "date": "2026-10-01",
   "number": 13,
-  "clue": "Arma de Cupido: borde de un cuadro descabezado (4)",
-  "enumeration": "4",
-  "type": "eliminacion",
+  "clue": "Se juega de cinco en cinco con esférico y canasta (10)",
+  "enumeration": "10",
+  "type": "charada",
   "difficulty": 2,
   "author": "Enredo",
-  "secret": "HkwTCxcYSEASCBRsY3NiEh1HChcDDQFERlldWA8LEmxCXAROFgBELFhCWVZZDx0SRF5VDA0TEQsdDwgSVlNeUlFPVUsECh1HSE1LXVRWU18TCkNFXQlCUAAcH0FTXlNCRF5eDwoTp8UzFwkODVZVEnVYQVlJX/PeThcWRANMElRXUERfWU5Z8tYAXEUhAw1QX0BSSBFUSBBEC04REAULX10QV0UNVFwNfXA3LT1eRK2GVlVBVUxTVVdRVQqsyUVMHERcEF5XDXwZDdK3904zNycgAxBN"
+  "secret": "HkwTCxcYSEASCBRvcHxifnIgPSYqRkMPVlVUX0NYRERfX0dUUDYBT0dHVVVXDVVVDVNYCw0dRQEBDVFZXFVCExwPWV8BBxEEEABfEAoQTw8dEktfVQELAEdeAVheXB4USElAQVFfBBobCgpNFxDymUVIEVpYVVYEThYARAxEXFNdFkhfEE5ZXwYBsN5ECl4SXFMWSVRWRF5YBgex1gpBDXdcElNeV/OEQlgGAVIAF09IXhBwd2Hyo2MLEQkPUgYFAUxBRFMaDVRcDXN0Njo9X0QtbH7zoXgNGhBudWIxIVJYRC1sfn98dWhiZGIeExg="
 }

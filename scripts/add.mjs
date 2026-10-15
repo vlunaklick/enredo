@@ -8,7 +8,7 @@
 // Input: a JSON object or array in the format described in prompts/pista-criptica.md.
 import fs from "node:fs";
 import path from "node:path";
-import { PUZZLE_DIR, addDays, letters, madridDate, readManifest, savePuzzle, usedAnswers, validateClue } from "./lib.mjs";
+import { MIN_LETTERS, PUZZLE_DIR, addDays, letters, madridDate, readManifest, savePuzzle, usedAnswers, validateClue } from "./lib.mjs";
 
 const args = process.argv.slice(2);
 const flag = (name) => { const i = args.indexOf(name); return i > -1 ? args.splice(i, i + 1 < args.length && !args[i + 1].startsWith("--") ? 2 : 1)[1] ?? true : null; };
@@ -29,6 +29,8 @@ let failed = 0;
 for (const item of list) {
   const c = { ...item, answer: String(item.answer).trim().toUpperCase(), indicator: item.indicator || null, fodder: item.fodder || null };
   const errs = validateClue(c);
+  if (letters(c.answer).length < MIN_LETTERS) errs.push(`respuesta demasiado corta: mínimo ${MIN_LETTERS} letras`);
+  if (c.clue.includes(":")) errs.push("sin dos puntos: la pista debe leerse como una frase normal");
   if (used.has(letters(c.answer))) errs.push(`la respuesta ${c.answer} ya se usó`);
   if (errs.length) { failed++; console.error(`✗ ${c.clue}\n    ${errs.join("\n    ")}`); continue; }
 

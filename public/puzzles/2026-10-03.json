@@ -1,10 +1,10 @@
 {
   "date": "2026-10-03",
   "number": 15,
-  "clue": "Fruta de un peral sin final (4)",
-  "enumeration": "4",
-  "type": "eliminacion",
-  "difficulty": 1,
+  "clue": "La echas a la fuente si la tendencia abraza neón (6)",
+  "enumeration": "6",
+  "type": "contenedor",
+  "difficulty": 3,
   "author": "Enredo",
-  "secret": "HkwTCxcYSEASCBR9dGJsEh9HChcDDQFERlldWA8LEmtCRhEPUElGBkNWWVFXWV5CDwoRFgccRQIGQ1NcEBoPV19JVFYXTEhHFApfU1wQGg9USF1cUgsPBgwLAQ8IEvCda0NFWVHx3k4XFkQDTBJUV1BEX1lOWfDWAFxFNCp/c3wS9IZCWUMQVQwAEwmm1A0aQ1tYDV1RDXwaRYz090Q/aGBxHBRQ"
+  "secret": "HkwTCxcYSEASCBRgfn5odHJHQlABAQlEXFlGX0JfEhcSfwROFwYMDl4SURJaTBFWWFVdEQtQSUYGQ1ZZUVdZXkIPChEEDAAEHg4PHhJUWUlVVV8SCQsbHglITUhKQF5XQ1BERF9dR1RQp88DTBJVUV5MQhBMEF8EThQQAQFZV/KJFkhCEEFREwELFAwKBk5b84FYAxF8TBBHAAAWAAoMRFMQV0UNXVENfXwhL15FFRpIElFQRExLUQ1+dklOFwlEHO6fXVBZQV4QSVVfRQAXptcBFxJ9fR5jdBlpcRNYTj8qKippcx4QSw=="
 }

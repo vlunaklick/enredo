@@ -1,10 +1,10 @@
 {
   "date": "2026-09-20",
   "number": 2,
-  "clue": "Extremidad oculta en la rama nostálgica (4)",
-  "enumeration": "4",
-  "type": "oculta",
-  "difficulty": 1,
+  "clue": "Viento que gira con sodio dentro de un pájaro (7)",
+  "enumeration": "7",
+  "type": "contenedor",
+  "difficulty": 3,
   "author": "Enredo",
-  "secret": "HkwTCxcYSEASCBRgcXdiEBxHChcDDQFERlldWA8KG2hKRBcLHwwADkkQHBBfQ1RQTlNEChxQX0YATkdcRlcNVVcPHhIDARYBAR0PCF5HWkEcG0hKQAkPHAQQBkJcEggU75t8VUZCAAMbAQUL74kQV0UNXFgNVlUDBxwMBwbugV4cFmFRGV9XQxUbFxYQDg1BVRJTXlNWQ1ZVRQscRabEX1N9cxZjf0pZ8ZEJCRsGBa2WEtK0pA19eGN9HkcT"
+  "secret": "HkwTCxcYSEASCBR5f2tjc3QqTF5HAApLW15bQkRfVw8IEjMHFwsQAA1DRVcWSllLTBAcRwccAQ0MTEZfQBQXEl1IXEQXAVIBAU0BEFZdUklVSw8IXhACHklGClVCXFNYTERQQlwSX0ywzhIGSFxEXRZcRVwNVVkXD7DeRApeElxTFklVX0RcWQYHsdYKQQ13XBJG7pFTTEBfRQsBRQEDDWZ/YHJiCxlJV14RHB1FEg4NfHEeFkhcGV7xnQgMHQkLT0lXXBJFQlRQQggQMSEgTSouBHZ/EgsNZHZ/fHEhIVxHGQ=="
 }

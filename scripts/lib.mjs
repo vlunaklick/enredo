@@ -24,7 +24,9 @@ export const TYPES = {
 
 // Weekly curve like the NYT crossword: easy on Monday, hardest on Friday/Saturday.
 // Index = getUTCDay() (0 = Sunday).
-export const WEEK_CURVE = [2, 1, 1, 2, 2, 3, 3];
+export const WEEK_CURVE = [2, 1, 2, 2, 2, 3, 3];
+// New clues must be at least this long; short answers get solved by trial and error.
+export const MIN_LETTERS = 6;
 export const DIFFICULTY_NAMES = { 1: "fácil", 2: "media", 3: "difícil" };
 export function difficultyFor(iso) {
   return WEEK_CURVE[new Date(`${iso}T12:00:00Z`).getUTCDay()];

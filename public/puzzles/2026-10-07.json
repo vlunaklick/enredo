@@ -1,10 +1,10 @@
 {
   "date": "2026-10-07",
   "number": 19,
-  "clue": "Sentido: odio de vuelta (4)",
-  "enumeration": "4",
-  "type": "inversion",
-  "difficulty": 1,
+  "clue": "El tenedor, por ejemplo, está tapado (8)",
+  "enumeration": "8",
+  "type": "doble",
+  "difficulty": 3,
   "author": "Enredo",
-  "secret": "HkwTCxcYSEASCBRieHRiEhtHChcDDQFERlldWA8LEn5VWREHFgpGQw9bXlZfTlBEQkIVX0wWAEQZWFdcRlcPHRJLX1MBCwBHXk1CVlldFAETVVVAWwQAExENAEMQChD0hmJVQ0ReAQGw3kQKXhJcUxZJVFZEXl4GB7HWCkENfXR7eQ1dVe6dUwpOsM4ACg1ERVdaWVDylhDV4/xSKqfiaX0eEEs="
+  "secret": "HkwTCxcYSEASCBRuZHJkdWUxIVBJRgtIVFlcX1lYX0MSDUcrHkUQCkNXVF1EARFAQkIXAAQXCBQDQhAcEF9DVVlOUUMKHFBfChpBXhwQUEJVVEhCFV8ABwkIQw9XSEJaTF9RWVlYC0xIRyAAT15VElJIV1lDWVQMrcELXk9IXhBGU0NUVEJCFwAdUhAKT25ncntzf2V/ARBORQIdRRUaSBJVQULukBBZUUcECh1FARxZ8ZESdXhzeWhiYypAUBg="
 }

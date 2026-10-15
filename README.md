@@ -31,8 +31,8 @@ En Claude Code, la skill `.claude/skills/nueva-pista/` hace todo el flujo, inclu
 ## Dificultad
 
 Cada pista lleva `difficulty` 1 (fácil), 2 (media) o 3 (difícil); la web lo muestra con tres barras.
-Si una pista no la indica, se asigna por día de la semana: lunes y martes fáciles, miércoles y jueves medias, viernes y sábado difíciles, domingo media.
-Para tandas con dificultad variada funciona bien una ola: 1, 2, 3, 2, 1, 2, 3… (`tandas/tanda-01.json`).
+Si una pista no la indica, se asigna por día de la semana: lunes fácil, martes a jueves y domingo medias, viernes y sábado difíciles.
+Las respuestas tienen al menos 6 letras (`npm run add` rechaza las más cortas). Para una tanda, reparte con peso hacia arriba: mitad 3, el resto casi todo 2 (`tandas/tanda-03.json`).
 
 Ojo al verificar con un LLM: un solucionador experto puntúa la dificultad 1-2 niveles por debajo de lo que notaría una persona. Úsalo para ordenar, no como valor absoluto.
 

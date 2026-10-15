@@ -1,0 +1,152 @@
+[
+  {
+    "clue": "Estación con la hija del tío a la orilla (9)",
+    "answer": "PRIMAVERA",
+    "type": "charada",
+    "difficulty": 3,
+    "definition": "Estación",
+    "indicator": "con",
+    "fodder": "",
+    "explanation": "«estación» es la definición. La hija del tío es tu PRIMA; la orilla es la VERA (a la vera del camino): PRIMA + VERA = PRIMAVERA."
+  },
+  {
+    "clue": "Torbellino de nota y gigante para don Quijote (8)",
+    "answer": "REMOLINO",
+    "type": "charada",
+    "difficulty": 3,
+    "definition": "Torbellino",
+    "indicator": "y",
+    "fodder": "",
+    "explanation": "«torbellino» es la definición. La nota RE más el MOLINO que don Quijote tomó por gigante: RE + MOLINO = REMOLINO."
+  },
+  {
+    "clue": "Perro regalado guarda la bici (7)",
+    "answer": "CANDADO",
+    "type": "charada",
+    "difficulty": 3,
+    "definition": "guarda la bici",
+    "indicator": "",
+    "fodder": "",
+    "explanation": "«guarda la bici» es la definición («guarda» no es un contenedor). Perro = CAN; regalado = DADO: CAN + DADO = CANDADO."
+  },
+  {
+    "clue": "Billetero para acertar a lo loco (7)",
+    "answer": "CARTERA",
+    "type": "anagrama",
+    "difficulty": 1,
+    "definition": "Billetero",
+    "indicator": "a lo loco",
+    "fodder": "acertar",
+    "explanation": "«Billetero» es la definición. «a lo loco» indica anagrama de ACERTAR → CARTERA."
+  },
+  {
+    "clue": "Piso que se riega (6)",
+    "answer": "PLANTA",
+    "type": "doble",
+    "difficulty": 2,
+    "definition": "Piso",
+    "indicator": "",
+    "fodder": "",
+    "explanation": "Doble definición: un piso de un edificio es una PLANTA, y lo que se riega también es una PLANTA."
+  },
+  {
+    "clue": "Púa con calcio para la verdura de Popeye (8)",
+    "answer": "ESPINACA",
+    "type": "charada",
+    "difficulty": 2,
+    "definition": "la verdura de Popeye",
+    "indicator": "con",
+    "fodder": "",
+    "explanation": "«la verdura de Popeye» es la definición. Púa = ESPINA; calcio = CA (símbolo químico): ESPINA + CA = ESPINACA."
+  },
+  {
+    "clue": "Nota grave de la pobreza (7)",
+    "answer": "MISERIA",
+    "type": "charada",
+    "difficulty": 3,
+    "definition": "pobreza",
+    "indicator": "",
+    "fodder": "",
+    "explanation": "«Pobreza» es la definición. No es una nota baja: es la nota MI más SERIA (grave): MI + SERIA = MISERIA."
+  },
+  {
+    "clue": "Normal, como la que lleva el río (9)",
+    "answer": "CORRIENTE",
+    "type": "doble",
+    "difficulty": 3,
+    "definition": "Normal",
+    "indicator": "",
+    "fodder": "",
+    "explanation": "Doble definición: lo normal es CORRIENTE (corriente y moliente), y el río lleva CORRIENTE."
+  },
+  {
+    "clue": "Fruta arrugada con aspecto que sellan en la frontera (9)",
+    "answer": "PASAPORTE",
+    "type": "charada",
+    "difficulty": 3,
+    "definition": "que sellan en la frontera",
+    "indicator": "con",
+    "fodder": "",
+    "explanation": "«que sellan en la frontera» es la definición. La fruta arrugada es la PASA; el aspecto, el PORTE: PASA + PORTE = PASAPORTE."
+  },
+  {
+    "clue": "Barro y cero dan un refresco (8)",
+    "answer": "LIMONADA",
+    "type": "charada",
+    "difficulty": 2,
+    "definition": "refresco",
+    "indicator": "y",
+    "fodder": "",
+    "explanation": "«refresco» es la definición. Barro = LIMO; cero = NADA: LIMO + NADA = LIMONADA."
+  },
+  {
+    "clue": "Hortaliza del gazpacho que bebe infusión (6)",
+    "answer": "TOMATE",
+    "type": "charada",
+    "difficulty": 2,
+    "definition": "Hortaliza del gazpacho",
+    "indicator": "",
+    "fodder": "",
+    "explanation": "«Hortaliza del gazpacho» es la definición. Bebe = TOMA; infusión = TÉ: TOMA + TE = TOMATE."
+  },
+  {
+    "clue": "Máscara con nota en la degustación (6)",
+    "answer": "CARETA",
+    "type": "contenedor",
+    "difficulty": 2,
+    "definition": "Máscara",
+    "indicator": "en",
+    "fodder": "",
+    "explanation": "«Máscara» es la definición. La degustación es una CATA; mete dentro la nota RE: CA(RE)TA = CARETA."
+  },
+  {
+    "clue": "Dinero invertido en Madrid, por ejemplo (7)",
+    "answer": "CAPITAL",
+    "type": "doble",
+    "difficulty": 2,
+    "definition": "Dinero invertido",
+    "indicator": "",
+    "fodder": "",
+    "explanation": "Doble definición: el dinero invertido es el CAPITAL, y Madrid es una CAPITAL. «invertido» no indica inversión: es parte de la definición."
+  },
+  {
+    "clue": "Queda detrás de ti el acero que abraza un litro (7)",
+    "answer": "ESPALDA",
+    "type": "contenedor",
+    "difficulty": 3,
+    "definition": "Queda detrás de ti",
+    "indicator": "abraza",
+    "fodder": "",
+    "explanation": "«Queda detrás de ti» es la definición. El acero, en sentido literario, es la ESPADA; abraza la L de litro: ESPA(L)DA = ESPALDA."
+  },
+  {
+    "clue": "Roca fundida baña en oro el electrodoméstico (8)",
+    "answer": "LAVADORA",
+    "type": "charada",
+    "difficulty": 3,
+    "definition": "electrodoméstico",
+    "indicator": "",
+    "fodder": "",
+    "explanation": "«electrodoméstico» es la definición. La roca fundida es LAVA; baña en oro = DORA: LAVA + DORA = LAVADORA."
+  }
+]

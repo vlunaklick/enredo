@@ -1,0 +1,102 @@
+[
+  {
+    "clue": "Mineral con cima alocada (4)",
+    "answer": "MICA",
+    "type": "anagrama",
+    "difficulty": 2,
+    "definition": "Mineral",
+    "indicator": "alocada",
+    "fodder": "cima",
+    "explanation": "«Mineral» es la definición. «alocada» indica anagrama de CIMA → MICA."
+  },
+  {
+    "clue": "Sentido: odio de vuelta (4)",
+    "answer": "OIDO",
+    "type": "inversion",
+    "difficulty": 1,
+    "definition": "Sentido",
+    "indicator": "de vuelta",
+    "fodder": "odio",
+    "explanation": "«Sentido» es la definición. ODIO leído «de vuelta» → OÍDO."
+  },
+  {
+    "clue": "Flor oculta en el oro saqueado (4)",
+    "answer": "ROSA",
+    "type": "oculta",
+    "difficulty": 1,
+    "definition": "Flor",
+    "indicator": "oculta",
+    "fodder": "",
+    "explanation": "«Flor» es la definición. Está oculta en «oRO SAqueado» → ROSA."
+  },
+  {
+    "clue": "Esposo: vivienda y nota (6)",
+    "answer": "CASADO",
+    "type": "charada",
+    "difficulty": 2,
+    "definition": "Esposo",
+    "indicator": "y",
+    "fodder": "",
+    "explanation": "«Esposo» es la definición. Vivienda = CASA; una nota musical = DO → CASA + DO."
+  },
+  {
+    "clue": "Trofeo de un copal sin final (4)",
+    "answer": "COPA",
+    "type": "eliminacion",
+    "difficulty": 2,
+    "definition": "Trofeo",
+    "indicator": "sin final",
+    "fodder": "copal",
+    "explanation": "«Trofeo» es la definición. COPAL «sin final» (sin la L) → COPA."
+  },
+  {
+    "clue": "Local de juego: canoso abraza nota (6)",
+    "answer": "CASINO",
+    "type": "contenedor",
+    "difficulty": 3,
+    "definition": "Local de juego",
+    "indicator": "abraza",
+    "fodder": "",
+    "explanation": "«Local de juego» es la definición. Canoso = CANO; nota = SI; CANO «abraza» SI → CA(SI)NO."
+  },
+  {
+    "clue": "Evasión: las de vuelta con ida (6)",
+    "answer": "SALIDA",
+    "type": "combinada",
+    "difficulty": 3,
+    "definition": "Evasión",
+    "indicator": "de vuelta",
+    "fodder": "",
+    "explanation": "«Evasión» es la definición. LAS «de vuelta» = SAL; con IDA → SAL + IDA = SALIDA."
+  },
+  {
+    "clue": "Medida o tren urbano (5)",
+    "answer": "METRO",
+    "type": "doble",
+    "difficulty": 2,
+    "definition": "Medida",
+    "indicator": "",
+    "fodder": "",
+    "explanation": "Doble definición: METRO es una unidad de medida y también el tren urbano."
+  },
+  {
+    "clue": "Felino con toga alocada (4)",
+    "answer": "GATO",
+    "type": "anagrama",
+    "difficulty": 1,
+    "definition": "Felino",
+    "indicator": "alocada",
+    "fodder": "toga",
+    "explanation": "«Felino» es la definición. «alocada» indica anagrama de TOGA → GATO."
+  },
+  {
+    "clue": "Condimento de un bajo descabezado (3)",
+    "answer": "AJO",
+    "type": "eliminacion",
+    "difficulty": 1,
+    "definition": "Condimento",
+    "indicator": "descabezado",
+    "fodder": "bajo",
+    "explanation": "«Condimento» es la definición. BAJO «descabezado» (sin la B) → AJO."
+  }
+]

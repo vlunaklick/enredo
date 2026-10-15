@@ -1,4 +1,3 @@
-import { openLearn } from "./learn.js";
 import { initAccount, pushPlay } from "./account.js";
 
 const TZ = "Europe/Madrid";
@@ -17,7 +16,6 @@ const TYPE_NAMES = {
   homofono: "Suena como: se oye igual que otra cosa.",
   combinada: "Combinada: varios trucos a la vez.",
 };
-const TYPE_LESSON = { anagrama: "anagrama", oculta: "oculta", inversion: "inversion", charada: "charada", doble: "doble", contenedor: "contenedor", eliminacion: "eliminacion", homofono: "homofono", combinada: "combinadas" };
 
 const $ = (id) => document.getElementById(id);
 const today = madridDate();
@@ -84,7 +82,6 @@ async function init() {
   $("meta-left").innerHTML = `#${puzzle.number} · ${shortDate(date)}${date === today ? "" : ' · <span class="archived">archivo</span>'}`;
   $("level").innerHTML = `${LEVELS[lvl]} ${[1, 2, 3].map((n) => `<i class="${n <= lvl ? "on" : ""}"></i>`).join("")}`;
   renderClue();
-  $("intro").hidden = !!localStorage.getItem("enredo:seen");
   render();
   $("loading").hidden = true;
   $("game").hidden = false;
@@ -220,13 +217,6 @@ function paintHints() {
   const ht = $("hint-text");
   ht.textContent = msgs.at(-1) ?? "Pide ayuda si te atascas. Cada ayuda cuesta 10 puntos.";
   ht.classList.toggle("idle", !msgs.length);
-  if (used.has("type") && TYPE_LESSON[puzzle.type]) {
-    const a = document.createElement("button");
-    a.className = "link";
-    a.textContent = "¿cómo va?";
-    a.onclick = () => openLearn($("learn"), TYPE_LESSON[puzzle.type]);
-    ht.append(a);
-  }
   document.querySelectorAll(".chip").forEach((b) => {
     const k = b.dataset.hint;
     const isUsed = k === "letter" ? state.revealed.length > 0 : used.has(k);
@@ -253,7 +243,6 @@ function render() {
   $("play").hidden = done;
   $("result").hidden = !done;
   if (done) {
-    $("intro").hidden = true;
     const n = state.guesses.length;
     $("result-title").textContent = state.status === "won"
       ? ["¡A la primera!", "¡Bien visto!", "¡Lo tienes!", "¡Por poco!", "¡Al límite!"][n - 1]
@@ -348,15 +337,9 @@ document.querySelectorAll("[data-open]").forEach((b) => b.addEventListener("clic
   const id = b.dataset.open;
   if (id === "stats") renderStats();
   if (id === "archive") renderArchive();
-  if (id === "learn") return openLearn($("learn"));
   $(id).showModal();
 }));
 document.querySelectorAll("dialog").forEach((d) => d.addEventListener("click", (e) => { if (e.target === d) d.close(); }));
-$("intro").addEventListener("click", () => {
-  localStorage.setItem("enredo:seen", "1");
-  $("intro").hidden = true;
-  openLearn($("learn"), "fundamentos");
-});
 
 init().catch((err) => {
   console.error(err);

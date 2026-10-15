@@ -1,0 +1,4 @@
+# Only the static site is ever uploaded to Vercel.
+/*
+!/public
+!/vercel.json

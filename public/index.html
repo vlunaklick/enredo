@@ -14,9 +14,6 @@
   <header class="top">
     <span class="wordmark">enredo<i></i></span>
     <nav>
-      <button class="icon" data-open="learn" aria-label="Aprender">
-        <svg viewBox="0 0 24 24"><path d="M4 19V5.5A2.5 2.5 0 0 1 6.5 3H20v14H6.5A2.5 2.5 0 0 0 4 19.5 2.5 2.5 0 0 0 6.5 22H20"/></svg>
-      </button>
       <button class="icon" data-open="archive" aria-label="Archivo">
         <svg viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="17" rx="3"/><path d="M3 9h18M8 2v4M16 2v4"/></svg>
       </button>
@@ -40,7 +37,6 @@
     </label>
 
     <p id="status" class="status" role="status"></p>
-    <button id="intro" class="intro" hidden>¿Primera vez? <u>Aprende en un minuto</u> →</button>
 
     <footer id="play" class="play">
       <div class="chips" role="group" aria-label="Ayudas">
@@ -67,11 +63,6 @@
   </main>
 
   <p id="loading" class="loading">cargando…</p>
-
-  <dialog id="learn" class="sheet learn">
-    <form method="dialog"><button class="close" aria-label="Cerrar">×</button></form>
-    <div class="learn-body"></div>
-  </dialog>
 
   <dialog id="stats" class="sheet">
     <form method="dialog"><button class="close" aria-label="Cerrar">×</button></form>

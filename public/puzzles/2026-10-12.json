@@ -1,10 +1,10 @@
 {
   "date": "2026-10-12",
   "number": 24,
-  "clue": "Lecho con fiera que cambia de color (8)",
+  "clue": "Basta con nombrarlo para romperlo (8)",
   "enumeration": "8",
-  "type": "charada",
-  "difficulty": 2,
+  "type": "adivinanza",
+  "difficulty": 3,
   "author": "Enredo",
-  "secret": "HkwTCxcYSEASCBRucH1sfXem/TxHSE1JV1ZbWERFWUJfEF9MAxABT05TXVBfTBFUSBFRCgIdF0ZDD1teVl9OUERCQxBfTBEKCk0BEFZdUklUQg8LXBACHklGClVCXFNYTEVZQl8QX0ywzgcOQFBZUxZJVBBOXl4KHLDeRApeElxTFklUVkRfWwYHsdYKQQ13XBJaSFJYQhFXFk4eBEQsbH9xCRZBUBBLWFcXD15FAQMNfnXxpWMLEG5wfyROWUUoKu6hfhILDXJxYHB+IK3hK0pNUA=="
+  "secret": "HkwTCxcYSEASCBR+eHxof3EsIVBJRgtIVFlcX1lYX0MTCEcsExYQDg1RX1wWQ15dT0NTFwIdRRQOX1MQQFlAQVVfXV1HQlAMCgtEUVFGWV8TCkNEXglCUAMLC0lXQhAMQ0RcQR0QABYCCQUBTEZZXVgPCxJsVVsTBxwEChVMCBBGWUlQEEFQEhUHAREFT0hBEF5XDVVVS1hcDA0bptcBAxJxXhZJVFNEQxKnxQEMCApDUVld9JYRSUwRXApOGgQdT357fHd4bnh/AxNP"
 }

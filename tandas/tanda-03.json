@@ -1,23 +1,23 @@
 [
   {
-    "clue": "Estación con la hija del tío a la orilla (9)",
+    "clue": "La sangre altera la hija del tío a la orilla (9)",
     "answer": "PRIMAVERA",
     "type": "charada",
     "difficulty": 3,
-    "definition": "Estación",
-    "indicator": "con",
+    "definition": "La sangre altera",
+    "indicator": "",
     "fodder": "",
-    "explanation": "«estación» es la definición. La hija del tío es tu PRIMA; la orilla es la VERA (a la vera del camino): PRIMA + VERA = PRIMAVERA."
+    "explanation": "«La sangre altera» es la definición (la primavera la sangre altera). La hija del tío es la PRIMA; la orilla, la VERA: PRIMA + VERA = PRIMAVERA."
   },
   {
-    "clue": "Torbellino de nota y gigante para don Quijote (8)",
+    "clue": "Nota con gigante para don Quijote te traga en el río (8)",
     "answer": "REMOLINO",
     "type": "charada",
     "difficulty": 3,
-    "definition": "Torbellino",
-    "indicator": "y",
+    "definition": "te traga en el río",
+    "indicator": "con",
     "fodder": "",
-    "explanation": "«torbellino» es la definición. La nota RE más el MOLINO que don Quijote tomó por gigante: RE + MOLINO = REMOLINO."
+    "explanation": "«te traga en el río» es la definición. La nota RE más el MOLINO que don Quijote tomó por gigante: RE + MOLINO = REMOLINO."
   },
   {
     "clue": "Perro regalado guarda la bici (7)",
@@ -30,14 +30,14 @@
     "explanation": "«guarda la bici» es la definición («guarda» no es un contenedor). Perro = CAN; regalado = DADO: CAN + DADO = CANDADO."
   },
   {
-    "clue": "Billetero para acertar a lo loco (7)",
-    "answer": "CARTERA",
-    "type": "anagrama",
-    "difficulty": 1,
-    "definition": "Billetero",
-    "indicator": "a lo loco",
-    "fodder": "acertar",
-    "explanation": "«Billetero» es la definición. «a lo loco» indica anagrama de ACERTAR → CARTERA."
+    "clue": "Oye todos tus sueños y nunca se duerme (8)",
+    "answer": "ALMOHADA",
+    "type": "adivinanza",
+    "difficulty": 3,
+    "definition": "Oye todos tus sueños y nunca se duerme",
+    "indicator": "",
+    "fodder": "",
+    "explanation": "Adivinanza: toda la pista es la definición. La ALMOHADA está bajo tu cabeza mientras sueñas, pero ella no duerme."
   },
   {
     "clue": "Piso que se riega (6)",
@@ -50,14 +50,14 @@
     "explanation": "Doble definición: un piso de un edificio es una PLANTA, y lo que se riega también es una PLANTA."
   },
   {
-    "clue": "Púa con calcio para la verdura de Popeye (8)",
+    "clue": "Púa con calcio que hace forzudo a Popeye (8)",
     "answer": "ESPINACA",
     "type": "charada",
     "difficulty": 2,
-    "definition": "la verdura de Popeye",
+    "definition": "que hace forzudo a Popeye",
     "indicator": "con",
     "fodder": "",
-    "explanation": "«la verdura de Popeye» es la definición. Púa = ESPINA; calcio = CA (símbolo químico): ESPINA + CA = ESPINACA."
+    "explanation": "«que hace forzudo a Popeye» es la definición. Púa = ESPINA; calcio = CA (símbolo químico): ESPINA + CA = ESPINACA."
   },
   {
     "clue": "Nota grave de la pobreza (7)",
@@ -67,17 +67,17 @@
     "definition": "pobreza",
     "indicator": "",
     "fodder": "",
-    "explanation": "«Pobreza» es la definición. No es una nota baja: es la nota MI más SERIA (grave): MI + SERIA = MISERIA."
+    "explanation": "«pobreza» es la definición. No es una nota baja: es la nota MI más SERIA (grave): MI + SERIA = MISERIA."
   },
   {
-    "clue": "Normal, como la que lleva el río (9)",
+    "clue": "Normal, y te da calambre (9)",
     "answer": "CORRIENTE",
     "type": "doble",
     "difficulty": 3,
     "definition": "Normal",
     "indicator": "",
     "fodder": "",
-    "explanation": "Doble definición: lo normal es CORRIENTE (corriente y moliente), y el río lleva CORRIENTE."
+    "explanation": "Doble definición: lo normal es CORRIENTE, y la CORRIENTE eléctrica te da calambre."
   },
   {
     "clue": "Fruta arrugada con aspecto que sellan en la frontera (9)",
@@ -90,34 +90,34 @@
     "explanation": "«que sellan en la frontera» es la definición. La fruta arrugada es la PASA; el aspecto, el PORTE: PASA + PORTE = PASAPORTE."
   },
   {
-    "clue": "Barro y cero dan un refresco (8)",
-    "answer": "LIMONADA",
-    "type": "charada",
+    "clue": "Te hace llorar sin hacerte daño, capa a capa (7)",
+    "answer": "CEBOLLA",
+    "type": "adivinanza",
     "difficulty": 2,
-    "definition": "refresco",
-    "indicator": "y",
-    "fodder": "",
-    "explanation": "«refresco» es la definición. Barro = LIMO; cero = NADA: LIMO + NADA = LIMONADA."
-  },
-  {
-    "clue": "Hortaliza del gazpacho que bebe infusión (6)",
-    "answer": "TOMATE",
-    "type": "charada",
-    "difficulty": 2,
-    "definition": "Hortaliza del gazpacho",
+    "definition": "Te hace llorar sin hacerte daño, capa a capa",
     "indicator": "",
     "fodder": "",
-    "explanation": "«Hortaliza del gazpacho» es la definición. Bebe = TOMA; infusión = TÉ: TOMA + TE = TOMATE."
+    "explanation": "Adivinanza: toda la pista es la definición. Al cortar la CEBOLLA, capa a capa, lloras aunque no te duela."
   },
   {
-    "clue": "Máscara con nota en la degustación (6)",
-    "answer": "CARETA",
-    "type": "contenedor",
+    "clue": "Te imita sin hablar y siempre al revés (6)",
+    "answer": "ESPEJO",
+    "type": "adivinanza",
     "difficulty": 2,
-    "definition": "Máscara",
-    "indicator": "en",
+    "definition": "Te imita sin hablar y siempre al revés",
+    "indicator": "",
     "fodder": "",
-    "explanation": "«Máscara» es la definición. La degustación es una CATA; mete dentro la nota RE: CA(RE)TA = CARETA."
+    "explanation": "Adivinanza: toda la pista es la definición. El ESPEJO repite todo lo que haces, pero invertido."
+  },
+  {
+    "clue": "Nunca llega, porque cuando llega ya es hoy (6)",
+    "answer": "MAÑANA",
+    "type": "adivinanza",
+    "difficulty": 3,
+    "definition": "Nunca llega, porque cuando llega ya es hoy",
+    "indicator": "",
+    "fodder": "",
+    "explanation": "Adivinanza: toda la pista es la definición. MAÑANA nunca llega: cuando llega, ya es hoy."
   },
   {
     "clue": "Dinero invertido en Madrid, por ejemplo (7)",
@@ -130,23 +130,23 @@
     "explanation": "Doble definición: el dinero invertido es el CAPITAL, y Madrid es una CAPITAL. «invertido» no indica inversión: es parte de la definición."
   },
   {
-    "clue": "Queda detrás de ti el acero que abraza un litro (7)",
+    "clue": "El acero abraza un litro donde clava el traidor (7)",
     "answer": "ESPALDA",
     "type": "contenedor",
     "difficulty": 3,
-    "definition": "Queda detrás de ti",
+    "definition": "donde clava el traidor",
     "indicator": "abraza",
     "fodder": "",
-    "explanation": "«Queda detrás de ti» es la definición. El acero, en sentido literario, es la ESPADA; abraza la L de litro: ESPA(L)DA = ESPALDA."
+    "explanation": "«donde clava el traidor» es la definición (a traición, por la espalda). El acero, en sentido literario, es la ESPADA; abraza la L de litro: ESPA(L)DA = ESPALDA."
   },
   {
-    "clue": "Roca fundida baña en oro el electrodoméstico (8)",
+    "clue": "Roca fundida baña en oro a la que se come los calcetines (8)",
     "answer": "LAVADORA",
     "type": "charada",
     "difficulty": 3,
-    "definition": "electrodoméstico",
+    "definition": "la que se come los calcetines",
     "indicator": "",
     "fodder": "",
-    "explanation": "«electrodoméstico» es la definición. La roca fundida es LAVA; baña en oro = DORA: LAVA + DORA = LAVADORA."
+    "explanation": "«la que se come los calcetines» es la definición. La roca fundida es LAVA; baña en oro = DORA: LAVA + DORA = LAVADORA."
   }
 ]

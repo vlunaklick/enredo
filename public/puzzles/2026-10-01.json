@@ -1,10 +1,10 @@
 {
   "date": "2026-10-01",
   "number": 13,
-  "clue": "Se juega de cinco en cinco con esférico y canasta (10)",
-  "enumeration": "10",
-  "type": "charada",
+  "clue": "Sube y baja sin moverse del sitio (8)",
+  "enumeration": "8",
+  "type": "adivinanza",
   "difficulty": 2,
   "author": "Enredo",
-  "secret": "HkwTCxcYSEASCBRvcHxifnIgPSYqRkMPVlVUX0NYRERfX0dUUDYBT0dHVVVXDVVVDVNYCw0dRQEBDVFZXFVCExwPWV8BBxEEEABfEAoQTw8dEktfVQELAEdeAVheXB4USElAQVFfBBobCgpNFxDymUVIEVpYVVYEThYARAxEXFNdFkhfEE5ZXwYBsN5ECl4SXFMWSVRWRF5YBgex1gpBDXdcElNeV/OEQlgGAVIAF09IXhBwd2Hyo2MLEQkPUgYFAUxBRFMaDVRcDXN0Njo9X0QtbH7zoXgNGhBudWIxIVJYRC1sfn98dWhiZGIeExg="
+  "secret": "HkwTCxcYSEASCBRoYnNsfHQ3L1BJRgtIVFlcX1lYX0MSC0c9BwcBT1QSUlNcTBFDRF4RCAEEABYcSBJUV1oNQllZWV5HQlAMCgtEUVFGWV8TCkNFXQlCUAMLC0lXQhAMQ0RcQRwTABYCCQUBTEZZXVgPCxJsVFgTBxwEChVMCBBGWUlQEEFRERUHAREFT0hBEF5XDVVVS1lfDA0bptcBAxJ8UxZoYnNsfHQ3L1IWDR1bVxBCV19QEF5FUwwcUhxEDUxYUUAaDUFVX18RAAIeBEQBQhJDVxZARFVbVR9HEw=="
 }

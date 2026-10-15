@@ -20,6 +20,7 @@ export const TYPES = {
   eliminacion: "Eliminación: se quitan letras a una palabra (cabeza, cola, corazón...).",
   homofono: "Homófono: suena igual que otra palabra o expresión.",
   combinada: "Combinada: mezcla varios recursos (p. ej. un sinónimo leído al revés más otra pieza).",
+  adivinanza: "Adivinanza: toda la pista es una definición con trampa, sin juego de letras.",
 };
 
 // Weekly curve like the NYT crossword: easy on Monday, hardest on Friday/Saturday.

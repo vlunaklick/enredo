@@ -30,6 +30,7 @@ Por fuera, la pista se lee como una frase natural que despista (la **superficie*
 | `doble` | Dos definiciones distintas de la misma palabra. Sin indicador. | — | *Asiento que guarda tu dinero (5)* → BANCO |
 | `homofono` | Suena igual que otra palabra (b/v, h muda, ll/y). | se oye, suena, dicen | *Se oye que tuvo una cañería (4)* → TUBO |
 | `combinada` | Varios recursos a la vez; típico de la dificultad 3. | los de cada recurso | *Bestia con la plancha de vuelta (6)* → plancha = LÁMINA, al revés = ANIMAL |
+| `adivinanza` | Sin juego de letras: **toda la pista es la definición**, escrita como un acertijo o un refrán retorcido. Debe tener una sola respuesta razonable con esa enumeración. | — | *Cuanto más le quitas, más grande se hace (7)* → AGUJERO |
 
 **Abreviaturas válidas** (solo estas): puntos cardinales N, S, E, O · romanos I, V, X, L, C, D, M · L = litro · R = rey · notas DO, RE, MI, FA, SOL, LA, SI · símbolos químicos comunes (FE, NA, AU…) · un/una → A en charadas.
 
@@ -42,6 +43,8 @@ Por fuera, la pista se lee como una frase natural que despista (la **superficie*
 | `3` difícil | Experto | Dos pasos o más (sinónimo + abreviatura, piezas sinonímicas dentro de otras, combinadas), definición lateral pero honesta, superficie engañosa. 7 a 12 letras, se admiten varias palabras. |
 
 **Longitud mínima: 6 letras.** Las respuestas cortas (ROMA, MANO, GATO) se resuelven por tanteo y no dejan juego; `npm run add` las rechaza.
+**La definición también debe despistar.** Nada de «Postre italiano», «Insecto verde» o «Torre de iglesia»: describe la respuesta de lado, con un refrán, una imagen o un rasgo inesperado, pero honesto (*la hora de Cenicienta* → MEDIANOCHE, *la que se come los calcetines* → LAVADORA, *La sangre altera* → PRIMAVERA).
+Mezcla en cada tanda unas 1 de cada 4 adivinanzas puras (`adivinanza`) con el resto de pistas con juego de palabras.
 Evita las pistas de un solo paso visible (oculta o inversión literal de una palabra corta): son las que hacían el juego demasiado fácil.
 
 La dificultad **nunca** se consigue con trampas: una pista difícil sigue siendo justa letra a letra.
@@ -72,7 +75,8 @@ Devuelve **solo** JSON, sin texto alrededor. Un objeto o una lista de objetos:
 }
 ```
 
-- `indicator`: `""` en `doble` (y en `charada` si no hay enlace).
+- `indicator`: `""` en `doble` y `adivinanza` (y en `charada` si no hay enlace).
+- En `adivinanza`, `definition` es la pista entera sin la enumeración.
 - `fodder`: el material literal en `anagrama`, `inversion` y `eliminacion`; `""` en el resto.
 - `explanation`: una o dos frases para el jugador. Primero la definición, luego el mecanismo paso a paso.
 

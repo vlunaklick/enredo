@@ -15,6 +15,7 @@ const TYPE_NAMES = {
   eliminacion: "Quitar letras: a una palabra le falta un trozo.",
   homofono: "Suena como: se oye igual que otra cosa.",
   combinada: "Combinada: varios trucos a la vez.",
+  adivinanza: "Adivinanza: toda la pista es la definición, con trampa.",
 };
 
 const $ = (id) => document.getElementById(id);

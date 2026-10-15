@@ -1,103 +1,103 @@
 [
   {
-    "clue": "Raposa vuelve al campo inundado (7)",
+    "clue": "Raposa vuelve al campo siempre encharcado (7)",
     "answer": "ARROZAL",
     "type": "combinada",
     "difficulty": 3,
-    "definition": "campo inundado",
+    "definition": "campo siempre encharcado",
     "indicator": "vuelve",
     "fodder": "",
-    "explanation": "«campo inundado» es la definición. La raposa es la ZORRA; vuelta del revés da ARROZ, y se le pega AL: ARROZ + AL = ARROZAL."
+    "explanation": "«campo siempre encharcado» es la definición. La raposa es la ZORRA; vuelta del revés da ARROZ, y se le pega AL: ARROZ + AL = ARROZAL."
   },
   {
-    "clue": "Viento que gira con sodio dentro de un pájaro (7)",
+    "clue": "Pájaro con sodio dentro se llevó la casa de Dorothy (7)",
     "answer": "TORNADO",
     "type": "contenedor",
     "difficulty": 3,
-    "definition": "Viento que gira",
-    "indicator": "dentro de",
+    "definition": "se llevó la casa de Dorothy",
+    "indicator": "dentro",
     "fodder": "",
-    "explanation": "«viento que gira» es la definición. El pájaro es el TORDO; dentro va NA, el símbolo del sodio: TOR(NA)DO = TORNADO."
+    "explanation": "«se llevó la casa de Dorothy» (El mago de Oz) es la definición. El pájaro es el TORDO; dentro va NA, el símbolo del sodio: TOR(NA)DO = TORNADO."
   },
   {
-    "clue": "Flor que sale de tour con el astro rey (7)",
+    "clue": "Sale de tour con el astro rey y siempre le da la cara (7)",
     "answer": "GIRASOL",
     "type": "charada",
     "difficulty": 2,
-    "definition": "Flor",
+    "definition": "siempre le da la cara",
     "indicator": "con",
     "fodder": "",
-    "explanation": "«Flor» es la definición. Un tour es una GIRA; el astro rey, el SOL: GIRA + SOL = GIRASOL."
+    "explanation": "«siempre le da la cara» (al sol) es la definición. Un tour es una GIRA; el astro rey, el SOL: GIRA + SOL = GIRASOL."
   },
   {
-    "clue": "Roedor y época forman una trampa (8)",
-    "answer": "RATONERA",
-    "type": "charada",
-    "difficulty": 1,
-    "definition": "trampa",
-    "indicator": "y",
-    "fodder": "",
-    "explanation": "«trampa» es la definición. Roedor = RATÓN; época = ERA: RATÓN + ERA = RATONERA."
-  },
-  {
-    "clue": "Cadena que corta madera (6)",
-    "answer": "SIERRA",
-    "type": "doble",
+    "clue": "Cuanto más le quitas, más grande se hace (7)",
+    "answer": "AGUJERO",
+    "type": "adivinanza",
     "difficulty": 2,
-    "definition": "Cadena",
+    "definition": "Cuanto más le quitas, más grande se hace",
     "indicator": "",
     "fodder": "",
-    "explanation": "Doble definición: una cadena de montañas es una SIERRA, y lo que corta madera también es una SIERRA."
+    "explanation": "Adivinanza: toda la pista es la definición. Cuanto más material le quitas a un AGUJERO, más grande es."
   },
   {
-    "clue": "Postre italiano que lanza nota de él (8)",
+    "clue": "Te sigue al sol y te abandona en la oscuridad (6)",
+    "answer": "SOMBRA",
+    "type": "adivinanza",
+    "difficulty": 2,
+    "definition": "Te sigue al sol y te abandona en la oscuridad",
+    "indicator": "",
+    "fodder": "",
+    "explanation": "Adivinanza: toda la pista es la definición. Tu SOMBRA te acompaña cuando hay luz y desaparece a oscuras."
+  },
+  {
+    "clue": "Dulce italiano con café que lanza nota de él (8)",
     "answer": "TIRAMISÚ",
     "type": "charada",
     "difficulty": 3,
-    "definition": "Postre italiano",
+    "definition": "Dulce italiano con café",
     "indicator": "",
     "fodder": "",
-    "explanation": "«Postre italiano» es la definición. «Lanza» no es el arma sino el verbo: TIRA. La nota es MI y «de él» es SU: TIRA + MI + SU = TIRAMISÚ."
+    "explanation": "«Dulce italiano con café» es la definición. «Lanza» no es el arma sino el verbo: TIRA. La nota es MI y «de él» es SU: TIRA + MI + SU = TIRAMISÚ."
   },
   {
-    "clue": "Pariente del pulpo de pequeña bahía con el Egeo, por ejemplo (7)",
+    "clue": "Pequeña bahía con el Egeo, por ejemplo, para quien escupe tinta (7)",
     "answer": "CALAMAR",
     "type": "charada",
     "difficulty": 2,
-    "definition": "Pariente del pulpo",
+    "definition": "quien escupe tinta",
     "indicator": "con",
     "fodder": "",
-    "explanation": "«Pariente del pulpo» es la definición. La pequeña bahía es una CALA; el Egeo es un MAR: CALA + MAR = CALAMAR."
+    "explanation": "«quien escupe tinta» es la definición. La pequeña bahía es una CALA; el Egeo es un MAR: CALA + MAR = CALAMAR."
   },
   {
-    "clue": "Se vende en la lonja la falta que encierra el sur (7)",
+    "clue": "Se subasta de madrugada la falta que encierra el sur (7)",
     "answer": "PESCADO",
     "type": "contenedor",
     "difficulty": 3,
-    "definition": "Se vende en la lonja",
+    "definition": "Se subasta de madrugada",
     "indicator": "encierra",
     "fodder": "",
-    "explanation": "«se vende en la lonja» es la definición. La falta es el PECADO, que encierra la S de sur: PE(S)CADO = PESCADO."
+    "explanation": "«Se subasta de madrugada» (en la lonja) es la definición. La falta es el PECADO, que encierra la S de sur: PE(S)CADO = PESCADO."
   },
   {
-    "clue": "Votación descabezada que imparte el maestro (7)",
+    "clue": "Votación descabezada que se aprende a golpes (7)",
     "answer": "LECCIÓN",
     "type": "combinada",
     "difficulty": 3,
-    "definition": "imparte el maestro",
+    "definition": "se aprende a golpes",
     "indicator": "descabezada",
     "fodder": "",
-    "explanation": "«imparte el maestro» es la definición. La votación es una ELECCIÓN; sin la cabeza (la E) queda LECCIÓN."
+    "explanation": "«se aprende a golpes» es la definición. La votación es una ELECCIÓN; sin la cabeza (la E) queda LECCIÓN."
   },
   {
-    "clue": "Pedro loa alocado al felino moteado (8)",
+    "clue": "Pedro loa alocado al que no puede cambiar sus manchas (8)",
     "answer": "LEOPARDO",
     "type": "anagrama",
     "difficulty": 2,
-    "definition": "felino moteado",
+    "definition": "que no puede cambiar sus manchas",
     "indicator": "alocado",
     "fodder": "Pedro loa",
-    "explanation": "«felino moteado» es la definición. «alocado» indica anagrama de PEDRO LOA → LEOPARDO."
+    "explanation": "«que no puede cambiar sus manchas» (como dice el refrán) es la definición. «alocado» indica anagrama de PEDRO LOA → LEOPARDO."
   },
   {
     "clue": "Sin un alma, como el Gobi (8)",
@@ -110,94 +110,94 @@
     "explanation": "Doble definición: un sitio sin un alma está DESIERTO, y el Gobi es un DESIERTO."
   },
   {
-    "clue": "Utensilio de baño con japonés revuelto (7)",
-    "answer": "ESPONJA",
-    "type": "anagrama",
-    "difficulty": 1,
-    "definition": "Utensilio de baño",
-    "indicator": "revuelto",
-    "fodder": "japonés",
-    "explanation": "«la usas en la ducha» es la definición. «revuelto» indica anagrama de JAPONÉS → ESPONJA."
-  },
-  {
-    "clue": "Se juega de cinco en cinco con esférico y canasta (10)",
-    "answer": "BALONCESTO",
-    "type": "charada",
+    "clue": "Si lo cuentas, deja de serlo (7)",
+    "answer": "SECRETO",
+    "type": "adivinanza",
     "difficulty": 2,
-    "definition": "Se juega de cinco en cinco",
-    "indicator": "y",
+    "definition": "Si lo cuentas, deja de serlo",
+    "indicator": "",
     "fodder": "",
-    "explanation": "«se juega de cinco en cinco» es la definición. El esférico es el BALÓN; la canasta, el CESTO: BALÓN + CESTO = BALONCESTO."
+    "explanation": "Adivinanza: toda la pista es la definición. Un SECRETO que se cuenta ya no es secreto."
   },
   {
-    "clue": "Promedio y lo que sigue a la tarde dan las doce (10)",
+    "clue": "Sube y baja sin moverse del sitio (8)",
+    "answer": "ESCALERA",
+    "type": "adivinanza",
+    "difficulty": 2,
+    "definition": "Sube y baja sin moverse del sitio",
+    "indicator": "",
+    "fodder": "",
+    "explanation": "Adivinanza: toda la pista es la definición. La ESCALERA sirve para subir y bajar, pero ella no se mueve."
+  },
+  {
+    "clue": "Promedio y lo que sigue a la tarde marcan la hora de Cenicienta (10)",
     "answer": "MEDIANOCHE",
     "type": "charada",
     "difficulty": 3,
-    "definition": "las doce",
+    "definition": "la hora de Cenicienta",
     "indicator": "y",
     "fodder": "",
-    "explanation": "«las doce» es la definición. El promedio es la MEDIA; lo que sigue a la tarde, la NOCHE: MEDIA + NOCHE = MEDIANOCHE."
+    "explanation": "«la hora de Cenicienta» es la definición. El promedio es la MEDIA; lo que sigue a la tarde, la NOCHE: MEDIA + NOCHE = MEDIANOCHE."
   },
   {
-    "clue": "La echas a la fuente si la tendencia abraza neón (6)",
+    "clue": "Tendencia que abraza el neón tiene cara y cruz (6)",
     "answer": "MONEDA",
     "type": "contenedor",
     "difficulty": 3,
-    "definition": "La echas a la fuente",
+    "definition": "tiene cara y cruz",
     "indicator": "abraza",
     "fodder": "",
-    "explanation": "«la echas a la fuente» es la definición. La tendencia es la MODA, que abraza NE, el símbolo del neón: MO(NE)DA = MONEDA."
+    "explanation": "«tiene cara y cruz» es la definición. La tendencia es la MODA, que abraza NE, el símbolo del neón: MO(NE)DA = MONEDA."
   },
   {
-    "clue": "Lo trabaja el carpintero, oculto en un poema de ramas (6)",
+    "clue": "Se toca para la suerte, oculta en un poema de ramas (6)",
     "answer": "MADERA",
     "type": "oculta",
     "difficulty": 2,
-    "definition": "Lo trabaja el carpintero",
-    "indicator": "oculto en",
+    "definition": "Se toca para la suerte",
+    "indicator": "oculta en",
     "fodder": "",
-    "explanation": "«Lo trabaja el carpintero» es la definición. Está oculta en «poeMA DE RAmas»: MADERA."
+    "explanation": "«Se toca para la suerte» es la definición (tocar madera). Está oculta en «poeMA DE RAmas»: MADERA."
   },
   {
-    "clue": "Arma de Cupido con parte del ojo sale tras la lluvia (8)",
-    "answer": "ARCOÍRIS",
-    "type": "charada",
+    "clue": "Cuanto más seca, más mojada acaba (6)",
+    "answer": "TOALLA",
+    "type": "adivinanza",
     "difficulty": 2,
-    "definition": "sale tras la lluvia",
-    "indicator": "con",
+    "definition": "Cuanto más seca, más mojada acaba",
+    "indicator": "",
     "fodder": "",
-    "explanation": "«sale tras la lluvia» es la definición. El arma de Cupido es el ARCO; la parte del ojo, el IRIS: ARCO + IRIS = ARCOÍRIS."
+    "explanation": "Adivinanza: toda la pista es la definición. La TOALLA, cuanto más te seca, más mojada queda."
   },
   {
-    "clue": "Astro que estampa contra la pared (8)",
+    "clue": "Estampa contra la pared y firma autógrafos (8)",
     "answer": "ESTRELLA",
     "type": "doble",
     "difficulty": 3,
-    "definition": "Astro",
+    "definition": "firma autógrafos",
     "indicator": "",
     "fodder": "",
-    "explanation": "Doble definición: un astro es una ESTRELLA, y quien estampa algo contra la pared lo ESTRELLA."
+    "explanation": "Doble definición: quien estampa algo contra la pared lo ESTRELLA, y la que firma autógrafos es una ESTRELLA."
   },
   {
-    "clue": "El tenedor, por ejemplo, está tapado (8)",
+    "clue": "Así está el cielo antes de llover, y el tenedor también (8)",
     "answer": "CUBIERTO",
     "type": "doble",
     "difficulty": 3,
-    "definition": "El tenedor, por ejemplo",
+    "definition": "Así está el cielo antes de llover",
     "indicator": "",
     "fodder": "",
-    "explanation": "Doble definición: el tenedor es un CUBIERTO, y lo que está tapado está CUBIERTO."
+    "explanation": "Doble definición: antes de llover el cielo está CUBIERTO, y el tenedor es un CUBIERTO."
   },
   {
-    "clue": "El crucigrama, por ejemplo, transcurre con el clima (10)",
+    "clue": "Esto que haces ahora transcurre con el clima (10)",
     "answer": "PASATIEMPO",
     "type": "charada",
     "difficulty": 3,
-    "definition": "El crucigrama, por ejemplo",
+    "definition": "Esto que haces ahora",
     "indicator": "con",
     "fodder": "",
-    "explanation": "«el crucigrama, por ejemplo» es la definición. Transcurre = PASA; el clima = TIEMPO: PASA + TIEMPO = PASATIEMPO."
+    "explanation": "«Esto que haces ahora» es la definición: resolver la pista es un PASATIEMPO. Transcurre = PASA; el clima = TIEMPO: PASA + TIEMPO = PASATIEMPO."
   },
   {
     "clue": "Juguete que lleva el reloj (6)",
@@ -210,63 +210,63 @@
     "explanation": "Doble definición: una MUÑECA es un juguete, y la muñeca es donde se lleva el reloj."
   },
   {
-    "clue": "Se oye que hierva lo que pace la vaca (6)",
+    "clue": "Se oye que hierva la mala, que nunca muere (6)",
     "answer": "HIERBA",
     "type": "homofono",
     "difficulty": 2,
-    "definition": "lo que pace la vaca",
+    "definition": "la mala, que nunca muere",
     "indicator": "Se oye",
     "fodder": "",
-    "explanation": "«la pace la vaca» es la definición. «Se oye» indica homófono: HIERVA (del verbo hervir) suena igual que HIERBA."
+    "explanation": "«la mala, que nunca muere» es la definición (mala HIERBA nunca muere). «Se oye» indica homófono: HIERVA suena igual que HIERBA."
   },
   {
-    "clue": "Torre de iglesia con bronce que repica y el Tajo, por ejemplo (10)",
+    "clue": "Lo que llama a misa y el Tajo, por ejemplo, donde anida la cigüeña (10)",
     "answer": "CAMPANARIO",
     "type": "charada",
     "difficulty": 3,
-    "definition": "Torre de iglesia",
+    "definition": "donde anida la cigüeña",
     "indicator": "y",
     "fodder": "",
-    "explanation": "«torre de iglesia» es la definición. El bronce que repica es la CAMPANA; el Tajo es un RÍO: CAMPANA + RÍO = CAMPANARIO."
+    "explanation": "«donde anida la cigüeña» es la definición. Lo que llama a misa es la CAMPANA; el Tajo es un RÍO: CAMPANA + RÍO = CAMPANARIO."
   },
   {
-    "clue": "Lecho con fiera que cambia de color (8)",
-    "answer": "CAMALEÓN",
-    "type": "charada",
-    "difficulty": 2,
-    "definition": "que cambia de color",
-    "indicator": "con",
+    "clue": "Basta con nombrarlo para romperlo (8)",
+    "answer": "SILENCIO",
+    "type": "adivinanza",
+    "difficulty": 3,
+    "definition": "Basta con nombrarlo para romperlo",
+    "indicator": "",
     "fodder": "",
-    "explanation": "«cambia de color» es la definición. El lecho es la CAMA; la fiera, el LEÓN: CAMA + LEÓN = CAMALEÓN."
+    "explanation": "Adivinanza: toda la pista es la definición. Al decir «silencio» ya no hay SILENCIO."
   },
   {
-    "clue": "Revolotea de flor en flor por el piélago con uno que posa para el pintor (8)",
+    "clue": "Piélago con uno que posa para el pintor, antes fue gusano (8)",
     "answer": "MARIPOSA",
     "type": "charada",
     "difficulty": 3,
-    "definition": "Revolotea de flor en flor",
+    "definition": "antes fue gusano",
     "indicator": "con",
     "fodder": "",
-    "explanation": "«Revolotea de flor en flor» es la definición. Piélago = MAR; uno = I (romano); el que posa para el pintor POSA: MAR + I + POSA = MARIPOSA."
+    "explanation": "«antes fue gusano» es la definición: la MARIPOSA fue oruga. Piélago = MAR; uno = I (romano); el que posa para el pintor POSA: MAR + I + POSA = MARIPOSA."
   },
   {
-    "clue": "Insecto verde que brinca cerros (11)",
+    "clue": "Brinca cerros el primo verde de la langosta (11)",
     "answer": "SALTAMONTES",
     "type": "charada",
     "difficulty": 2,
-    "definition": "Insecto verde",
+    "definition": "el primo verde de la langosta",
     "indicator": "",
     "fodder": "",
-    "explanation": "«insecto verde» es la definición. Brinca = SALTA; cerros = MONTES: SALTA + MONTES = SALTAMONTES."
+    "explanation": "«el primo verde de la langosta» es la definición. Brinca = SALTA; cerros = MONTES: SALTA + MONTES = SALTAMONTES."
   },
   {
-    "clue": "La casa de pichones casi es símbolo de la paz (6)",
+    "clue": "Casi la casa de pichones lleva un ramo de olivo en el pico (6)",
     "answer": "PALOMA",
     "type": "combinada",
     "difficulty": 2,
-    "definition": "símbolo de la paz",
-    "indicator": "casi",
+    "definition": "lleva un ramo de olivo en el pico",
+    "indicator": "Casi",
     "fodder": "",
-    "explanation": "«símbolo de la paz» es la definición. La casa de los pichones es el PALOMAR; «casi» quita la última letra: PALOMA."
+    "explanation": "«lleva un ramo de olivo en el pico» es la definición. La casa de los pichones es el PALOMAR; «Casi» quita la última letra: PALOMA."
   }
 ]

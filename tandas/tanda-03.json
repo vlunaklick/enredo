@@ -8,5 +8,15 @@
     "indicator": "abraza",
     "fodder": "",
     "explanation": "«Charca» es la definición. Satélite = LUNA; plata (símbolo químico) = AG; LUNA «abraza» AG → L(AG)UNA."
+  },
+  {
+    "clue": "Infusión criolla oculta en una toma temprana (4)",
+    "answer": "MATE",
+    "type": "oculta",
+    "difficulty": 1,
+    "definition": "Infusión criolla",
+    "indicator": "oculta en",
+    "fodder": "",
+    "explanation": "«Infusión criolla» es la definición. «oculta en» avisa que la respuesta está escondida: toMA TEmprana → MATE."
   }
 ]

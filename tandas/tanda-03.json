@@ -18,5 +18,15 @@
     "indicator": "oculta en",
     "fodder": "",
     "explanation": "«Infusión criolla» es la definición. «oculta en» avisa que la respuesta está escondida: toMA TEmprana → MATE."
+  },
+  {
+    "clue": "Fruta tropical: un peso porteño (5)",
+    "answer": "MANGO",
+    "type": "doble",
+    "difficulty": 2,
+    "definition": "Fruta tropical",
+    "indicator": "",
+    "fodder": "",
+    "explanation": "«Fruta tropical» es una definición; «un peso porteño» es la otra, porque en lunfardo un mango es un peso. Las dos llevan a MANGO."
   }
 ]

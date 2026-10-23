@@ -1,0 +1,12 @@
+[
+  {
+    "clue": "Cariño, vuelve de Roma (4)",
+    "answer": "AMOR",
+    "type": "inversion",
+    "difficulty": 1,
+    "definition": "Cariño",
+    "indicator": "vuelve",
+    "fodder": "Roma",
+    "explanation": "«Cariño» es la definición. «vuelve» indica inversión: ROMA al revés → AMOR."
+  }
+]

@@ -1,0 +1,12 @@
+[
+  {
+    "clue": "Mueble que guarda este mes ahorrativo (4)",
+    "answer": "MESA",
+    "type": "oculta",
+    "difficulty": 1,
+    "definition": "Mueble",
+    "indicator": "guarda",
+    "fodder": "",
+    "explanation": "«Mueble» es la definición. «guarda» indica que está oculta: este MES Ahorrativo → MESA."
+  }
+]
